@@ -1,0 +1,554 @@
+@charset "utf-8";
+/* CSS Document */
+/* hide the dotted lines around an element when it receives focus */
+* { _noFocusLine: expression(this.hideFocus=true); } /* ie7 */
+::-moz-focus-inner {border:0;}                       /* firefox */
+:focus {outline:none;}                               /* ie8, chrome, etc */
+
+#gobackward{width: 27px; height:27px; position: absolute; top: 386px; left: 25px; z-index: 999999; cursor: pointer; display: none; 
+	background-image: url('../images/backward_btn.jpg');background-position: 0 0;background-repeat: no-repeat;}
+#playpause{width: 27px;height: 27px; position: absolute; top: 386px; left: 84px; z-index: 999999; display:none;
+	background-position: 0 0; background-repeat: none; cursor: pointer;	}	
+#goforward{width: 27px; height:27px; position: absolute; top: 386px; left: 145px; z-index: 999999; cursor: pointer; display: none;
+	background-image: url('../images/forward_btn.jpg');background-position: 0 0;background-repeat: no-repeat;}
+
+.play{
+	background-image: url('../images/play_btn.jpg');
+}
+.pause{
+	background-image: url('../images/pause_btn.jpg');
+}
+#frameNum {
+	display: block;
+	width: 40px;
+	height: 40px;
+	position: absolute;
+	top: 8px;
+	right: 8px;
+	text-align: center;	
+	z-index: 999;
+	font-family: "Univers 45 Light", Arial, sans-serif;
+	font-style: normal;
+	font-weight: normal !important;
+	font-size: 24px;
+	color: #417300;
+	text-decoration: none;
+}
+#frame1 a{
+	font-family: "Univers 45 Light", Arial, sans-serif;
+	font-style: italic;
+	font-weight: normal !important;
+	font-size: 24px;
+	color: #417300;
+	text-decoration: none;
+	outline: 0;
+	cursor:pointer;
+}
+#frame1 a:hover{
+	color: #666666;
+	text-decoration: underline;
+}
+
+img {
+	border: 0;
+	margin: 0;
+	padding: 0;	
+}
+#preload{display: none;}
+
+body{
+	height: 100%;
+}
+#frame1 span{
+	font-family: "Univers 45 Light", Arial, sans-serif;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	color: #417300;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 24px;
+	color: #417300;
+	text-decoration: none;	
+}
+#mainwindow{
+	width: 960px;
+	height: 100%;
+	margin: auto;
+	background-color: #ffffff;
+	background-repeat: repeat;
+	background-size: 100% 100%;
+	position: relative;
+}
+#frame-wrapper{
+	width: 960px;
+	height: 485px;
+	min-width: 960px;
+	min-height: 485px;   
+	margin: auto;
+	background-color: #ffffff;
+	position: relative;
+	top: 0px;
+	overflow: hidden;
+}
+
+#cc-wrapper{
+	width: 960px;
+	height: 110px;
+	margin: auto;
+	position: relative;
+	margin-top: 10px;
+	top: 16px;
+}
+
+.frames{
+	height: 432px;
+	width: 960px;
+	min-height: 432px;
+	overflow: hidden;
+}
+
+#mainmenu{
+	width: 960px;
+	height: 53px;
+	position: relative;
+	display: none;
+	z-index: 999;
+}
+
+.menuitem{
+	min-width: 240px;
+	min-height: 53px;
+	float: left;
+	margin: 0;
+	padding: 0;
+	vertical-align: bottom;
+	overflow: hidden;
+	cursor:pointer;
+	 
+}
+#cc-content{width: 960px; min-height: 50px; font-size: 24px;line-height: 24px;font-family: "Univers 55", Arial, UniversLTStd;font-weight: normal;font-style: normal; color: #000;
+	border-bottom: 1px solid #417337; overflow: hidden; position: relative; height: 100px; margin-top: 20px; padding-left: 10px;}
+.contentOpen{ display: block;}
+.contentClose{ display: none;}
+
+#cc-btn{
+	width: 76px;
+	height: 40px;
+	float: right;
+	margin-top: 10px;
+	display: block;
+	background-position: 0 0;
+	background-repeat: none;
+	cursor: pointer;
+}
+
+.greenCC{
+	background-image: url('../images/cc-btn-active.jpg');
+}
+.whiteCC{
+	background-image: url('../images/cc-btn-normal.jpg');
+}
+
+.active1{background-image: url('../images/menu-home-active.jpg')!important;}
+.active2{background-image: url('../images/menu-energybasics-active.jpg')!important;}
+.active3{background-image: url('../images/menu-waystosave-active.jpg')!important;}
+.active4{background-image: url('../images/menu-resources-active.jpg')!important;}
+
+.deactive1{background-image: url('../images/menu-home.jpg')!important;}
+.deactive2{background-image: url('../images/menu-energybasics.jpg')!important;}
+.deactive3{background-image: url('../images/menu-waystosave.jpg')!important;}
+.deactive4{background-image: url('../images/menu-resources.jpg')!important;}
+
+
+#menu1{background-image: url('../images/menu-home.jpg'); background-position: 0 0; background-repeat: no-repeat; }
+#menu2{background-image: url('../images/menu-energybasics.jpg'); background-position: 0 0; background-repeat: no-repeat; }
+#menu3{background-image: url('../images/menu-waystosave.jpg'); background-position: 0 0; background-repeat: no-repeat; }
+#menu4{background-image: url('../images/menu-resources.jpg'); background-position: 0 0; background-repeat: no-repeat; }
+
+#loadingSpinner{margin: auto; display: block; width: 100px; height: 100px; position: relative; top: 177px;}
+#preloader1{margin: auto; display: block; width: 468px; height: 33px; position: relative; top: 222px;}
+#preloader2{margin: auto; display: none; width: 482px; height: 69px; position: relative; top: 222px;}
+#preloader3{margin: auto; display: none; width: 411px; height: 75px; position: relative; top: 222px;}
+
+.bluebg{background-image: url('../images/bluebg.png'); background-position: 0 0; background-repeat: no-repeat;}
+.yellowbg{background-image: url('../images/yellowbg.png'); background-position: 0 0; background-repeat: no-repeat;}
+
+
+#f1-grass{ width: 960px; height: 223px; position:absolute; top: 343px; display: none;}
+#f1-cloud{ width: 960px; height: 213px; position: absolute; top: 10px; display: none;}
+#f1-sun{ width: 556px; height: 556px; position: absolute; top: 515px; left: 178px; display: none;}
+#f1-logo{ width: 449px; height: 157px; position:absolute; top: 116px; left: 258px; display: none;}
+
+#f2-maintitle{ width: 535px; height: 72px; position: absolute; top:  159px; left: -200px; display: none;}
+#f2-subtitle{ width: 535px; height: 56px; position: absolute; top:  241px; left: 205px; display: none;}
+#f2-bottomtitle{ width: 535px; height: 25px; position: absolute; top:  378px; left: 212px; display: none;}
+
+#f3-maintitle{ width: 606px; height: 31px; position: absolute; top:  205px; left: 200px; display: none;}
+#f3-link{ width: 177px; height: 31px; position: absolute; top:  264px; left: 269px; display: none; cursor: pointer; }
+#f3-link1, #f3-link2, #f3-link3{cursor: pointer;}
+
+#f3-question{ width: 323px; height: 31px; position: absolute; top:  264px; left: 418px; display: none;}
+
+#f4-bill{ width: 405px; height: 467px; top: 7px; left: 286px; position:absolute; display: none;}
+#f4-qcharge{ width: 222px; height: 162px; position: absolute; top: 14px; left: 98px; display: none;cursor: pointer; z-index: 100;}
+#f4-qtier{ width: 146px; height: 131px; position: absolute; top: 254px; left: 176px; display: none;cursor: pointer; z-index: 100;}
+#f4-qkwh{ width: 237px; height: 223px; position:absolute; top: 28px; left: 533px; display: none;cursor: pointer; z-index: 100;}
+#f4-qbasics{ width: 167px; height: 159px; position: absolute; top:  256px; left: 639px; display: none;cursor: pointer; z-index: 100;}
+
+#f4qcharge_sml{display: block;}
+#f4qtier_sml{display: block;}
+#f4qkwh_sml{ display: block;}
+#f4qbasics_sml{display: block;}
+
+#f4qcharge{display: none;}
+#f4qtier{display: none;}
+#f4qkwh{ display: none;}
+#f4qbasics{display: none;}
+
+#f5-bg{ width: 960px; height: 601px; position: absolute; top:  0px; left: 0px; display: none; z-index: -999;} /*frame11 bg go on top of this*/
+#f5-bill{ width: 616px; height: 564px; position: absolute; top:  7px; left: 25px; display: none;}
+#f5-kwh{ width: 533px; height: 113px; position: absolute; top:  227px; left: 379px; display: none;}
+
+#f6-title{ width: 606px; height: 89px; position: absolute; top:  103px; left: 339px; display: none;}
+#f6-equal{ width: 46px; height: 28px; position: absolute; top:  217px; left: 460px; display: none;}
+#f6-hours{ width: 491px; height: 65px; position: absolute; top:  268px; left: 241px; display: none;}
+
+#f7-lightbulb{ width: 142px; height: 207px; position: absolute; top:  53px; left: 241px; display: none;}
+#f7-watts{ width: 290px; height: 63px; position: absolute; top:  282px; left: 164px; display: none;}
+
+#f8-clock{ width: 197px; height: 211px; position: absolute; top:  49px; left: 523px; display: none;}
+#f8-x{ width: 44px; height: 50px; position: absolute; top:  294px; left: 467px; display: none;}
+#f8-hours{ width: 264px; height: 58px; position: absolute; top:  284px; left: 523px; display: none;}
+
+#f9-lb1{ width: 74px; height: 110px; position: absolute; top:  30px; left: 222px; display: none;}
+#f9-lb2{ width: 74px; height: 110px; position: absolute; top:  30px; left: 331px; display: none;}
+#f9-lb3{ width: 74px; height: 110px; position: absolute; top:  30px; left: 446px; display: none;}
+#f9-lb4{ width: 74px; height: 110px; position: absolute; top:  30px; left: 554px; display: none;}
+#f9-lb5{ width: 74px; height: 110px; position: absolute; top:  30px; left: 660px; display: none;}
+#f9-lb6{ width: 74px; height: 110px; position: absolute; top:  159px; left: 222px; display: none;}
+#f9-lb7{ width: 74px; height: 110px; position: absolute; top:  159px; left: 331px; display: none;}
+#f9-lb8{ width: 74px; height: 110px; position: absolute; top:  159px; left: 446px; display: none;}
+#f9-lb9{ width: 74px; height: 110px; position: absolute; top:  159px; left: 554px; display: none;}
+#f9-lb10{ width: 74px; height: 110px; position: absolute; top:  159px; left: 660px; display: none;}
+#f9-10{ width: 76px; height: 57px; position: absolute; top:  306px; left: 137px; display: none;}
+#f9-x{ width: 44px; height: 50px; position: absolute; top:  317px; left: 222px; display: none;}
+#f9-watts{ width: 293px; height: 62px; position: absolute; top:  304px; left: 273px; display: none;}
+#f9-x1{ width: 86px; height: 60px; position: absolute; top:  304px; left: 579px; display: none;}
+#f9-hour{ width: 148px; height: 60px; position: absolute; top:  304px; left: 673px; display: none;}
+
+#f10-house{ width: 415px; height: 342px; position: absolute; top: 8px; left: 275px; display: none; z-index: 50;}
+#f10-tv{ width: 93px; height: 90px; position: absolute; top:  224px; left: 372px; display: none; z-index: 50;}
+#f10-tree{ width: 567px; height: 91px; position: absolute; top:  243px; left: 222px; display: none; z-index: 100;} /*cover up washer in frame11*/
+#f10-land{ width: 960px; height: 157px; position: absolute; top:  305px; left: 0px; display: none; z-index: 50;}
+#f10-title{ width: 428px; height: 49px; position: absolute; top:  351px; left: 281px; display: none; z-index: 50;}
+#f10-text{ width: 475px; height: 22px; position: absolute; top:  399px; left: 259px; display: none; z-index: 50;}
+
+#f11-nightbg{ width: 960px; height: 601px; position: absolute; top:  0px; left: 0px; display: none; z-index: 10;}
+#f11-moon{ width: 176px; height: 176px; position: absolute; top:  -6px; left: 60px; display: none; z-index: 50;}
+#f11-washer{ width: 124px; height: 96px; position: absolute; top:  235px; left: 491px; display: none; z-index: 50;}
+#f11-laundry{ width: 547px; height: 49px; position: absolute; top:  353px; left: 208px; display: none; z-index: 50;}
+#f11-stars{width: 907px; height: 397px; position: absolute; top:  -41px; left: 25px; display: none; z-index: 49;}
+
+#f12-moon{ width: 176px; height: 176px; position: absolute; top:  -6px; left: 60px; display: none;z-index: 50;}
+#f12-computer{ width: 127px; height: 91px; position: absolute; top:  115px; left: 428px; display: none;z-index: 50;}
+#f12-title{ width: 547px; height: 49px; position: absolute; top:  350px; left: 208px; display: none;z-index: 50;}
+
+#f13-bg{width: 960px; height: 525px; position: absolute; top:  0px; left: 0px; display: none;}
+#f13-kwh{ width: 238px; height: 66px; position: absolute; top:  101px; left: 222px; display: none;}
+#f13-equal{ width: 51px; height: 38px; position: absolute; top:  113px; left: 481px; display: none;}
+#f13-cent{ width: 127px; height: 74px; position: absolute; top:  101px; left: 561px; display: none;}
+#f13-bar1{ width: 383px; height: 98px; position: absolute; top:  221px; left: 61px; display: none;}
+#f13-bar2{ width: 198px; height: 98px; position: absolute; top:  168px; left: 444px; display: none;}
+#f13-bar3{ width: 192px; height: 98px; position: absolute; top:  116px; left: 638px; display: none;}
+#f13-legal{width: 384px; height: 13px; position: absolute; top:  399px; left: 259px; display: none;}
+
+#f14-map{ width: 500px; height: 495px; position: absolute; top:  -25px; left: 34px; display: none;}
+#f14-title{ width: 403px; height: 68px; position: absolute; top:  203px; left: 511px; display: none;}
+
+#f15-sky{ width: 960px; height: 542px; position: absolute; top:  0px; left: 0px; display: none;}
+#f15-suncloud{ width: 513px; height: 156px; position: absolute; top:  16px; left: -1px; display: none;}
+#f15-mooncloud{ width: 406px; height: 353px; position: absolute; top:  -7px; left: 554px; display: none;}
+#f15-season{ width: 250px; height: 55px; position: absolute; top:  199px; left: 330px; display: none;}
+#f15-rain{ width: 528; height: 279px; position: absolute; top:  6px; left: 437px; display: none;}
+#f15-beach{ width: 381px; height: 291px; position: absolute; top:  154px; left: 1px; display: none;}
+#f15-mountain{ width: 445px; height: 151px; position: absolute; top:  289px; left: 516px; display: none;}
+
+#f16-clock{ width: 355px; height: 352px; position: absolute; top:  36px; left: 306px; display: none;}
+#f16-meter{ width: 153px; height: 50px; position: absolute; top:  146px; left: 406px; display: none;}
+
+
+#f17-title{ width: 334px; height: 36px; position: absolute; top:  45px; left: 324px; display: none;}
+#f17-actext{ width: 171px; height: 23px; position: absolute; top:  111px; left: 127px; display: none; cursor: pointer;}
+#f17-ac{ width: 158px; height: 157px; position: absolute; top:  144px; left: 127px; display: none;cursor: pointer;}
+#f17-pooltext{ width: 57px; height: 19px; position: absolute; top:  111px; left: 456px; display: none;cursor: pointer;}
+#f17-pool{ width: 270px; height: 208px; position: absolute; top:  144px; left: 338px; display: none;cursor: pointer;}
+#f17-fridgetext{ width: 137px; height: 23px; position: absolute; top:  111px; left: 705px; display: none;cursor: pointer;}
+#f17-fridge{ width: 127px; height: 211px; position: absolute; top:  144px; left: 720px; display: none;cursor: pointer;}
+#f17-continue{ width: 167px; height: 19px; position: absolute; top:  373px; left: 228px; display: none;cursor: pointer;}
+#f17-question{ width: 409px; height: 23px; position: absolute; top:  369px; left: 414px; display: none;cursor: pointer;}
+
+#f17ac_sml, #f17pool_sml, #f17fridge_sml{display: block;}
+#f17ac, #f17pool, #f17fridge{display: none;}
+/*change below*/
+#f18-cloud{ width: 931px; height: 105px; position: absolute; top:  47px; left: 29px; display: none;}
+#f18-gentext{ width: 333px; height: 34px; position: absolute; top:  160px; left: 127px; display: none;}
+#f18-gen{ width: 288x; height: 172px; position: absolute; top:  221px; left: 111px; display: none; z-index: 10}
+#f18-deltext{ width: 274px; height: 39px; position: absolute; top:  160px; left: 578px; display: none;}
+#f18-del{ width: 597px; height: 144px; position: absolute; top: 220px; left: 340px; display: none;}
+#f18-grass{ width: 960px; height: 155px; position: absolute; top:  357px; left: 0px; display: none; overflow: hidden; z-index: 50}
+
+#f19-text1{ width: 190px; height: 21px; position: absolute; top:  74px; left: 247px; display: none;}
+#f19-text2{ width: 161px; height: 21px; position: absolute; top:  74px; left: 507px; display: none;}
+#f19-text3{ width: 64px; height: 17px; position: absolute; top:  74px; left: 702px; display: none;}
+#f19-s1{ width: 332px; height: 25px; position: absolute; top:  99px; left: 168px; display: none;}
+#f19-s2{ width: 171px; height: 25px; position: absolute; top:  99px; left: 503px; display: none;}
+#f19-s3{ width: 115px; height: 25px; position: absolute; top:  99px; left: 679px; display: none;}
+#f19-cash1{ width: 338px; height: 278px; position: absolute; top:  86px; left: 165px; display: none;}
+#f19-cash2{ width: 174px; height: 278px; position: absolute; top:  86px; left: 503px; display: none;}
+#f19-cash3{ width: 121px; height: 278px; position: absolute; top:  86px; left: 677px; display: none;}
+
+#f20-bar1{ width: 18px; height: 358px; position: absolute; top: 33px; left: 272px; display: none;}
+#f20-label1{ width: 240px; height: 67px; position: absolute; top:  171px; left: 162px; display: none;}
+#f20-bar2{ width: 18px; height: 358px; position: absolute; top:  33px; left: 656px; display: none;}
+#f20-label2{ width: 241px; height: 300px; position: absolute; top:  84px; left: 546px; display: none;}
+
+#f21-grass{ width: 960px; height: 125px; position: absolute; top:  370px; left: 0px; display: none; overflow: hidden; z-index: 50;}                  
+#f21-greenbox{ width: 389px; height: 98px; position: absolute; top:  277px; left: 261px; display: none;} 
+#f21-text{ width: 101px; height: 61px; position: absolute; top:  295px; left: 405px; display: none; z-index: 50;} 
+
+#f22-yellowbox{ width: 389px; height: 107px; position: absolute; top:  169px; left: 260px; display: none;} 
+#f22-text{ width: 90px; height: 41px; position: absolute; top:  201px; left: 410px; display: none;} 
+
+#f23-yellowbox{ width: 389px; height: 128px; position: absolute; top:  40px; left: 260px; display: none;} 
+#f23-text{ width: 90px; height: 40px; position: absolute; top:  76px; left: 405px; display: none;}
+
+
+#f24-greenbox{ width: 383px; height: 102px; position: absolute; top:  246px; left: 97px; display: none;} 
+#f24-tier2bar{ width: 198px; height: 104px; position: absolute; top:  159px; left: 480px; display: none;}
+#f24-tier3bar{ width: 192px; height: 104px; position: absolute; top:  75px; left: 676px; display: none;} 
+#f24-tier1text{ width: 230px; height: 20px; position: absolute; top:  217px; left: 97px; display: none;}  
+#f24-tier2text{ width: 102px; height: 24px; position: absolute; top:  122px; left: 480px; display: none;} 
+#f24-tier3text{ width: 102px; height: 24px; position: absolute; top:  42px; left: 681px; display: none;} 
+            
+#f25-word1{ width: 283px; height: 23px; position: absolute; top:  295px; left: 151px; display: none;} 
+#f25-word2{ width: 47px; height: 26px; position: absolute; top:  208px; left: 558px; display: none;} 
+#f25-word3{ width: 151px; height: 76px; position: absolute; top:  98px; left: 698px; display: none;} 
+#f25-arrow{ width: 277px; height: 123px; position: absolute; top:  22px; left: 272px; display: none;} 
+#f25-disclaimer{ width: 457px; height: 52px; position: absolute; top:  365px; left: 240px; display: none;} 
+
+
+#f27-cloud{ width: 241px; height: 170px; position: absolute; top:  0px; left: 0px; display: none;} 
+#f27-title{ width: 299px; height: 26px; position: absolute; top:  30px; left: 329px; display: none; z-index: 10;} 
+#f27-tier1{ width: 196px; height: 53px; position: absolute; top:  88px; left: 334px; display: none;z-index: 10;} 
+#f27-treegrass{ width: 504px; height: 317px; position: absolute; top:  127px; left: 0px; display: none; overflow: hidden;} 
+#f27-fan{ width: 133px; height: 174px; position: absolute; top:  185px; left: 413px; display: none;z-index: 50;} 
+#f27-mountain{ width: 870px; height: 129px; position: absolute; top:  328px; left:0px; display: none;z-index: 40;} 
+#f27-wave{ width: 267px; height: 130px; position: absolute; top:  325px; left: 586px; display: none; z-index: 10;} 
+
+#f28-bg{ width: 960px; height: 601px; position: absolute; top:  0px; left: 0px; display: none;} 
+#f28-sun{ width: 240px; height: 256px; position: absolute; top:  20px; left: 720px; display: none;} 
+#f28-tier{ width: 290px; height: 53px; position: absolute; top:  88px; left: 334px; display: none;}
+#f28-ac{ width: 170px; height: 112px; position: absolute; top:  171px; left: 395px; display: none;} 
+#f28-air{ width: 152px; height: 56px; position: absolute; top:  284px; left: 406px; display: none;} 
+#f28-mountain{ width: 960px; height: 108px; position: absolute; top:  333px; left: 0px; display: none;} 
+
+/* Added sun id */
+#f29-sun{ width: 395px; height: 384px; position: absolute; top:  -213px; left: 297px; display: none;} 
+#f29-cloud{ width: 950px; height: 135px; position: absolute; top:  26px; left: 0px; display: none;} 
+#f29-title{ width: 537px; height: 32px; position: absolute; top:  195px; left: 212px; display: none;} 
+#f29-learnmore{ width: 237px; height: 26px; position: absolute; top:  256px; left: 175px; display: none;} 
+#f29-question{ width: 490px; height: 26px; position: absolute; top:  256px; left: 410px; display: none;} 
+#f29-grass{ width: 960px; height: 155px; position: absolute; top:  367px; left: 0px; display: none; overflow: hidden;} 
+
+#f30-bg{ width: 960px; height: 601px; position: absolute; top:  0px; left: 0px; display: none;} 
+#f30-title{ width: 240px; height: 40px; position: absolute; top:  36px; left: 383px; display: none;}
+#f30-acc1{ width: 198x; height: 256px; position: absolute; top:  107px; left: 125px; display: none;}
+#f30-acc2{ width: 202px; height: 260px; position: absolute; top:  107px; left: 332px; display: none;}
+#f30-acc3{ width: 275px; height: 125px; position: absolute; top:  107px; left: 542px; display: none;}
+#f30-acc4{ width: 276px; height: 125px; position: absolute; top:  240px; left: 542px; display: none;}
+
+#f31-cloud{ width: 950px; height: 135px; position: absolute; top:  30px; left: 0px; display: none; z-index:10;}
+#f31-title{ width: 437px; height: 32px; position: absolute; top:  159px; left: 262px; display: none;}
+#f31-text1{ width: 281px; height: 24px; position: absolute; top:  224px; left: 127px; display: none;}
+#f31-text3{ width: 404px; height: 28px; position: absolute; top:  224px; left: 408px; display: none;}
+#f31-grass{ width: 960px; height: 155px; position: absolute; top:  330px; left: 0px; display: none; z-index:20;}
+
+#f33-sun{ width: 189px; height: 189px; position: absolute; top:  -22px; left: 691px; display: none; z-index: 5;}
+#f33-house{ width: 424px; height: 342px; position: absolute; top: 8px; left: 248px; display: none;z-index: 5;}
+#f33-pole{ width: 319px; height: 380px; position: absolute; top:  102px; left: 0px; display: none; z-index:15;}
+#f33-wind{ width: 322px; height: 371px; position: absolute; top:  -15px; left: 275px; display: none; z-index:100;}                                        
+#f33-ac{ width: 45px; height: 51px; position: absolute; top:  301px; left: 618px; display: none; z-index: 20;}
+#f33-air{ width: 58px; height: 79px; position: absolute; top:  257px; left: 615px; display: none;z-index:15;}
+#f33-tree{ width: 457px; height: 42px; position: absolute; top:  318px; left: 218px; display: none; z-index: 10;}
+
+#f34-house{ width: 424px; height: 342px; position: absolute; top: 8px; left: 248px; display: none;z-index: 5;}
+
+#f35-sun{ width: 272px; height: 272px; position: absolute; top:  -54px; left: 657px; display: none; z-index: 5;}
+#f35-pole{ width: 136px; height: 326px; position: absolute; top:  102px; left: 0px; display: none; z-index:15;}
+#f35-wire{ width: 153px; height: 86px; position: absolute; top:  121px; left: 131px; display: none; z-index:20;}
+#f35-house{ width: 424px; height: 342px; position: absolute; top: 8px; left: 248px; display: none;z-index: 5;}
+
+#f36-actext{ width: 224px; height: 31px; position: absolute; top:  76px; left: 66px; display: none; cursor:pointer;}
+#f36-ac{ width: 170px; height: 168px; position: absolute; top:  158px; left: 75px; display: none;cursor:pointer;}
+#f36-pooltext{ width: 72px; height:31px; position: absolute; top:  76px; left: 439px; display: none;cursor:pointer;}
+#f36-pool{ width: 267px; height: 198px; position: absolute; top:  149px; left: 320px; display: none;cursor:pointer;}
+#f36-fridgetext{ width: 176px; height: 31px; position: absolute; top:  76px; left: 720px; display: none;cursor:pointer;}
+#f36-fridge{ width: 148px; height: 237px; position: absolute; top:  145px; left: 720px; display: none;cursor:pointer;}  
+
+#f36ac_sml, #f36pool_sml, #f36fridge_sml{display:block;}
+#f36ac, #f36pool, #f36fridge{display:none; }	
+  
+#f38-hvac{ width: 771px; height: 41px; position: absolute; top:  117px; left: 102px; display: none;z-index:20;}		   
+#f38-title{ width: 159px; height: 47px; position: absolute; top:  133px; left: 386px; display: none;}	
+#f38-ac{ width: 277px; height: 185px; position: absolute; top:  197px; left: 337px; display: none;}			   
+		              	
+  
+#f39-ac1{ width: 148px; height: 99px; position: absolute; top:  67px; left: 120px; display: none;z-index: 20;}	 
+#f39-ac2{ width: 148px; height: 99px; position: absolute; top:  67px; left: 312px; display: none;z-index: 20;}	  
+#f39-ac3{ width: 148px; height: 99px; position: absolute; top:  67px; left: 503px; display: none;z-index: 20;}	   
+#f39-ac4{ width: 148px; height: 99px; position: absolute; top:  67px; left: 690px; display: none;z-index: 20;}	 
+#f39-ac5{ width: 148px; height: 99px; position: absolute; top:  181px; left: 120px; display: none;z-index: 20;}	 
+#f39-ac6{ width: 148px; height: 99px; position: absolute; top:  181px; left: 312px; display: none;z-index: 20;}	 
+#f39-ac7{ width: 148px; height: 99px; position: absolute; top:  181px; left: 503px; display: none;z-index: 20;}	 
+#f39-ac8{ width: 148px; height: 99px; position: absolute; top:  181px; left: 690px; display: none;z-index: 20;}	 
+#f39-ac9{ width: 148px; height: 99px; position: absolute; top:  295px; left: 120px; display: none;z-index: 20;}	 
+#f39-ac10{ width: 148px; height: 99px; position: absolute; top:  295px; left: 312px; display: none;z-index: 20;}	 
+#f39-ac11{ width: 148px; height: 99px; position: absolute; top:  295px; left: 503px; display: none;z-index: 20;}	 
+#f39-ac12{ width: 148px; height: 99px; position: absolute; top:  295px; left: 690px; display: none;z-index: 20;}	 
+#f39-sun{ width: 306px; height: 132px; position: absolute; top:  -41px; left: 330px; display: none;}	 
+#f39-cloud{ width: 950px; height: 135px; position: absolute; top:  39px; left: 0px; display: none; z-index: 10;}	 
+#f39-wind{ width: 847px; height: 424px; position: absolute; top:  4px; left: 23px; display: none;}	 
+
+/* Cut neighborhood */
+#f40-noglow, #f40-glow{ width: 960px; height: 523px; position: absolute; top:  2px; left: 0px; display: none; opacity:0;}
+
+
+#f41-cloud{ width: 950px; height: 135px; position: absolute; top:  30px; left: 0px; display: none;} 
+#f41-ther{ width: 234px; height: 236px; position: absolute; top:  88px; left: 231px; display: none;} 
+#f41-light{ width: 176px; height: 249px; position: absolute; top:  88px; left: 548px; display: none;}
+
+#f43-title{ width: 279px; height: 34px; position: absolute; top:  67px; left: 338px; display: none;} 				
+#f43ac78{ width: 352px; height: 229px; position: absolute; top:  134px; left: 305px; display: none;}
+#f43ac83{ width: 352px; height: 229px; position: absolute; top:  134px; left: 305px; display: none;}				
+
+#f45-clock{ width: 225px; height: 229px; position: absolute; top:  134px; left: 365px; display: none;}
+
+#f46-mobile{ width: 154px; height: 253px; position: absolute; top:  134px; left: 406px; display: none;}
+
+#f47-title{ width: 594px; height: 34px; position: absolute; top:  124px; left: 177px; display: none;}
+#f47-more{ width: 279px; height: 36px; position: absolute; top:  190px; left: 403px; display: none;}
+#f47-disclaimer{ width: 599px; height: 13px; position: absolute; top:  357px; left: 186px; display: none;}
+
+#f48-logo{ width: 463px; height: 243px; position: absolute; top:  68px; left: 241px; display: none;}
+
+#f49-line1{ width: 311px; height: 54px; position: absolute; top:  104px; left: 335px; display: none;}
+#f49-line2{ width: 419px; height: 41px; position: absolute; top:  161px; left: 277px; display: none;}
+#f49-line3{ width: 514px; height: 45px; position: absolute; top:  206px; left: 232px; display: none;}     
+#f49-link{ width: 692px; height: 40px; position: absolute; top:  295px; left: 318px; display: none;}
+#f49-line4{ width: 591px; height: 13px; position: absolute; top:  390px; left: 226px; display: none;}
+
+#f50-icon1{ width: 80px; height: 144px; position: absolute; top:  42px; left: 140px; display: none;}
+#f50-text1{ width: 172px; height: 69px; position: absolute; top:  211px; left: 93px; display: none;}
+#f50-icon2{ width: 171px; height: 130px; position: absolute; top:  45px; left: 373px; display: none;}
+#f50-text2{ width: 208px; height: 67px; position: absolute; top:  211px; left: 340px; display: none;}
+#f50-icon3{ width: 96px; height: 116px; position: absolute; top:  59px; left: 706px; display: none;}
+#f50-text3{ width: 223px; height: 63px; position: absolute; top:  211px; left: 629px; display: none;}
+
+
+#f51-pooltext{ width: 72px; height: 31px; position: absolute; top:  106px; left: 320px; display: none; cursor:pointer;}
+#f51-pool{ width: 267px; height: 198px; position: absolute; top:  217px; left: 175px; display: none; cursor:pointer;}
+#f51-fridgetext{ width: 176px; height: 31px; position: absolute; top:  106px; left: 573px; display: none; cursor:pointer;}
+#f51-fridge{ width: 148px; height: 237px; position: absolute; top:  149px; left: 585px; display: none; cursor:pointer;}
+
+#f51pool_sml, #f51fridge_sml{display:block;}
+#f51pool, #f51fridge{display: none;}
+
+#f52-title{ width: 201px; height: 33px; position: absolute; top:  19px; left: 55px; display: none;}				  
+#f52-sun{ width: 229px; height: 145px; position: absolute; top:  -16px; left: 652px; display: none;}
+#f52-cloud{ width: 496px; height: 108px; position: absolute; top:  11px; left: 499px; display: none;}
+#f52-pump{ width: 225px; height: 154px; position: absolute; top:  134px; left: 720px; display: none;}
+#f52-pool{ width: 960px; height: 268px; position: absolute; top:  170px; left: 0px; display: none;}
+#f52-splash{ width: 126px; height: 93px; position: absolute; top:  271px; left: 162px; display: none; z-index: 100;}
+
+#f53-title{ width: 401px; height: 79px; position: absolute; top:  15px; left: 55px; display: none;}
+#f53-apply{ width: 299px; height: 33px; position: absolute; top:  115px; left: 55px; display: none;}
+						
+#f54-title{ width: 370px; height: 33px; position: absolute; top:  25px; left: 55px; display: none;}
+#f54-pool{ width: 960px; height: 152px; position: absolute; top: 286px; left: 0px; display: none;}
+#f54-wave{ width: 863px; height: 37px; position: absolute; top:  372px; left: 44px; display: none;}
+
+#f55-bullet1{ width: 378px; height: 25px; position: absolute; top:  76px; left: 54px; display: none;}
+#f55-waterjar{ width: 167px; height: 245px; position: absolute; top:  185px; left: 564px; display: none;}
+
+#f56-bullet2{ width: 329px; height: 27px; position: absolute; top:  115px; left: 54px; display: none;}
+#f56-clock{ width: 105px; height: 110px; position: absolute; top:  111px; left: 558px; display: none;}
+#f56-3hour{ width: 100px; height: 50px; position: absolute; top:  227px; left: 563px; display: none;}
+
+#f57-bullet3{ width: 341px; height: 22px; position: absolute; top:  154px; left: 55px; display: none;}
+#f57-net{ width: 144px; height: 230px; position: absolute; top: 206px; left: 600px; display: none;}
+#f57-leaves{ width: 217px; height: 120px; position: absolute; top:  349px; left: 604px; display: none;}
+#f57-text{ width: 290px; height: 14px; position: absolute; top:  408px; left: 315px; display: none;}
+
+#f58-bullet4{ width: 369px; height: 25px; position: absolute; top: 194px; left: 55px; display: none;}
+#f58-text{ width: 875px; height: 37px; position: absolute; top:  442px; left: 38px; display: none;}
+
+#f59-bullet5{ width: 326px; height: 24px; position: absolute; top:  236px; left: 55px; display: none;}
+#f59-drain1{ width: 155px; height: 65px; position: absolute; top:  359px; left: 280px; display: none;}
+#f59-bubble1{ width: 67px; height: 92px; position: absolute; top:  324px; left: 323px; display: none;}
+#f59-drain2{ width: 155px; height: 65px; position: absolute; top:  359px; left: 518px; display: none;}
+#f59-bubble2{ width: 66px; height: 93px; position: absolute; top:  324px; left: 563px; display: none;}
+#f59-drain3{ width: 155px; height: 65px; position: absolute; top:  359px; left: 760px; display: none;}
+#f59-bubble3{ width: 75px; height: 87px; position: absolute; top:  330px; left: 808px; display: none;}
+
+#f60-sun	{ width: 209px; height: 210px; position: absolute; top:  7px; left: 55px; display: none;}			
+#f60-cloud	{ width: 960px; height: 128px; position: absolute; top:  15px; left: 0px; display: none;}
+#f60-mountain{ width: 633px; height: 218px; position: absolute; top:  297px; left: 0px; display: none; }
+#f60-grass{ width: 960px; height: 204px; position: absolute; top:  308px; left: 0px; display: none; z-index:5;}
+#f60-title{ width: 501px; height: 75px; position: absolute; top:  17px; left: 300px; display: none;}
+#f60-fridge	{ width: 138px; height: 229px; position: absolute; top: 135px; left: 533px; display: none; z-index:5;}
+
+#f61-fridge	{ width: 157px; height: 234px; position: absolute; top:  114px; left: 534px; display: none;}
+
+#f62-title	{ width: 590px; height: 75px; position: absolute; top:  23px; left: 292px; display: none;}
+#f62-blue{ width: 71px; height: 133px; position: absolute; top: 170px; left: 671px; display: none;}
+#f62-energystar{ width: 234px; height: 236px; position: absolute; top: 113px; left: 610px; display: none;}
+
+#f63-title{ width: 443px; height: 80px; position: absolute; top:  21px; left: 351px; display: none;}
+#f63-truck{ width: 520px; height: 254px; position: absolute; top:  111px; left: 265px; display: none;}
+#f63-dollyfridge{ width: 160px; height: 184px; position: absolute; top:  150px; left: 658px; display: none;}
+
+#f64-title{ width: 454px; height: 33px; position: absolute; top:  144px; left: 370px; display: none;}
+#f64-ac{ width: 310px; height: 34px; position: absolute; top: 208px; left: 423px; display: none;}
+#f64-pool{ width: 226px; height: 34px; position: absolute; top:  206px; left: 695px; display: none;}
+
+#f65-sun{ width: 209px; height: 210px; position: absolute; top:  -6px; left: 690px; display: none;}
+#f65-cloud{ width: 950px; height: 135px; position: absolute; top:  28px; left: 0px; display: none;}
+#f65-mountain{ width: 960px; height: 244px; position: absolute; top:  269px; left: 0px; display: none; z-index: 1;}
+#f65-tree{ width: 887px; height: 65px; position: absolute; top:  334px; left: 25px; display: none;z-index:5;}
+#f65-fruittree{ width: 616px; height: 564px; position: absolute; top:  277px; left: 0px; display: none;z-index:15;}
+#f65-house{ width: 651px; height: 110px; position: absolute; top:  322px; left: 310px; display: none;z-index:10;}
+
+#f65-myaccount{ width: 300px; height: 40px; position: absolute; top:  17px; left: 204px; display: none;}
+#f65-budget{ width: 300px; height: 40px; position: absolute; top:55px; left: 204px; display: none;}
+#f65-savepower{ width: 300px; height: 40px; position: absolute; top:  94px; left: 204px; display: none;}
+#f65-rebates{ width: 300px; height: 40px; position: absolute; top:  139px; left: 204px; display: none;}
+#f65-video{ width: 300px; height: 40px; position: absolute; top:  183px; left: 204px; display: none;}
+#f65-baselinerate{ width: 300px; height: 40px; position: absolute; top:  226px; left: 204px; display: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

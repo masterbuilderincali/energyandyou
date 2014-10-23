@@ -1,0 +1,1676 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>SCE Energy Explainer</title>
+<link type="text/css" href="css/main.css" rel="stylesheet" />
+<script src="http://ajax.googleapis.com/ajax/libs/dojo/1.7.4/dojo/dojo.js"></script>
+<script src="js/energyExplainer.js"></script>
+</head>
+
+<body>
+<div id="preload">
+		<img alt="" src="images/preloader1.png" width="0" height="0" />&#160;
+        <img alt="" src="images/preloader2.png" width="0" height="0" />&#160;
+        <img alt="" src="images/preloader3.png" width="0" height="0" />&#160;
+        <img alt="" src="images/loading_spinner.gif" width="0" height="0" />&#160;
+    	<img alt="" src="images/backward_btn.jpg" width="0" height="0" />&#160;    
+    	<img alt="" src="images/forward_btn.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/pause_btn.jpg" width="0" height="0" />&#160;
+        <img alt="" src="images/play_btn.jpg" width="0" height="0" />&#160;       
+    	<img alt="" src="images/f62-energystar.gif" width="0" height="0" />&#160;    
+    	<img alt="" src="images/cc-btn-active.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/cc-btn-normal.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/menu-energybasics.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/menu-energybasics-active.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/menu-home.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/menu-home-active.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/menu-resources.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/menu-resources-active.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/menu-waystosave.jpg" width="0" height="0" />&#160;   
+        <img alt="" src="images/menu-waystosave-active.jpg" width="0" height="0" />&#160;   
+    	<img alt="" src="images/f4-qbasics_smaller.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f4-qcharge_smaller.png" width="0" height="0" />&#160;
+    	<img alt="" src="images/f4-qkwh_smaller.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f4-qtier_smaller.png" width="0" height="0" />&#160;
+    	<img alt="" src="images/f17-ac_smaller.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f17-fridge_smaller.png" width="0" height="0" />&#160;        
+    	<img alt="" src="images/f17-pool_smaller.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f24-arrow.png" width="0" height="0" />&#160;  		
+        <img alt="" src="images/f35-dottedwire.gif" width="0" height="0" />&#160;          
+        <img alt="" src="images/f36-ac_smaller.png" width="0" height="0" />&#160;          
+        <img alt="" src="images/f37-fridge_smaller.png" width="0" height="0" />&#160;          
+        <img alt="" src="images/f37-pool_smaller.png" width="0" height="0" />&#160;    
+        <img alt="" src="images/f41-light.gif" width="0" height="0" />&#160;            
+        <img alt="" src="images/f41-ther.gif" width="0" height="0" />&#160;           
+        <img alt="" src="images/f45-clock.gif" width="0" height="0" />&#160;         
+        <img alt="" src="images/f51-fridge_smaller.png" width="0" height="0" />&#160;          
+        <img alt="" src="images/f51-pool_smaller.png" width="0" height="0" />&#160; 
+        <img alt="" src="images/f35-rotating_sun.gif" width="0" height="0" />&#160; 		
+        <img alt="" src="images/f27-treegrass.png" width="0" height="0" />&#160;
+    	<img alt="" src="images/bluebg.png" width="0" height="0" />&#160;
+        <img alt="" src="images/yellowbg.png" width="0" height="0" />&#160;
+    	<img alt="" src="images/f1-cloud.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f1-sun.png" width="0" height="0" />&#160;
+    	<img alt="" src="images/f1-grass.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f1-logo.png" width="0" height="0" />&#160;        
+    	<img alt="" src="images/f2-maintitle.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f2-subtitle.png" width="0" height="0" />&#160;        
+        <img alt="" src="images/f2-bottomtitle.png" width="0" height="0" />&#160;          
+        <img alt="" src="images/f3-maintitle.png" width="0" height="0" />&#160;          
+        <img alt="" src="images/f4-bill.png" width="0" height="0" />&#160;          
+        <img alt="" src="images/f4-qcharge.png" width="0" height="0" />&#160;    
+        <img alt="" src="images/f4-qtier.png" width="0" height="0" />&#160;            
+        <img alt="" src="images/f4-qkwh.png" width="0" height="0" />&#160;           
+        <img alt="" src="images/f4-qbasics.png" width="0" height="0" />&#160;         
+        <img alt="" src="images/f5-bg.png" width="0" height="0" />&#160;          
+        <img alt="" src="images/f5-bill.png" width="0" height="0" />&#160; 
+        <img alt="" src="images/f5-kwh.png" width="0" height="0" />&#160; 
+        <img alt="" src="images/f6-title.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f6-equal.png" width="0" height="0" />&#160;        
+        <img alt="" src="images/f6-hours.png" width="0" height="0" />&#160;        
+        <img alt="" src="images/f7-lightbulb.png" width="0" height="0" />&#160;        
+        <img alt="" src="images/f7-watts.png" width="0" height="0" />&#160;              
+        <img alt="" src="images/f8-clock.png" width="0" height="0" />&#160;        
+        <img alt="" src="images/f8-x.png" width="0" height="0" />&#160;  
+        <img alt="" src="images/f8-hours.png" width="0" height="0" />&#160; 
+        <img alt="" src="images/f9-lb.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f9-watts.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f9-x1.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f9-hour.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f10-house.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f10-tv.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f10-tree.png" width="0" height="0" />&#160;       
+        <img alt="" src="images/f10-land.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f10-title.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f10-text.png" width="0" height="0" />&#160;              
+        <img alt="" src="images/f11-nightbg.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f11-stars.png" width="0" height="0" />&#160;       
+        <img alt="" src="images/f11-moon.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f11-washer.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f11-laundry.png" width="0" height="0" />&#160;     
+        <img alt="" src="images/f12-moon.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f12-computer.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f12-title.png" width="0" height="0" />&#160;     
+        <img alt="" src="images/f13-bluebg.png" width="0" height="0" />&#160;     
+        <img alt="" src="images/f13-kwh.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f13-equal.png" width="0" height="0" />&#160;
+        <img alt="" src="images/f13-cent.png" width="0" height="0" />&#160;           
+         <img alt="" src="images/f14-map.png" width="0" height="0" />&#160;                   
+         <img alt="" src="images/f14-title.png" width="0" height="0" />&#160;   		 
+         <img alt="" src="images/f15-sky.png" width="0" height="0" />&#160; 
+         <img alt="" src="images/f15-suncloud.png" width="0" height="0" />&#160;	 
+         <img alt="" src="images/f15-mooncloud.png" width="0" height="0" />&#160;
+         <img alt="" src="images/f15-season.png" width="0" height="0" />&#160; 
+         <img alt="" src="images/f15-rain.png" width="0" height="0" />&#160;	 
+         <img alt="" src="images/f15-beach.png" width="0" height="0" />&#160;
+         <img alt="" src="images/f15-mountain.png" width="0" height="0" />&#160; 		 
+         <img alt="" src="images/f16-clock.png" width="0" height="0" />&#160;	 
+         <img alt="" src="images/f16-meter_reading.png" width="0" height="0" />&#160;
+         <img alt="" src="images/f17-title.png" width="0" height="0" />&#160;	 
+         <img alt="" src="images/f17-ac.png" width="0" height="0" />&#160;
+         <img alt="" src="images/f17-pool.png" width="0" height="0" />&#160;	 
+         <img alt="" src="images/f17-fridge.png" width="0" height="0" />&#160;
+         <img alt="" src="images/f17-continue.png" width="0" height="0" />&#160;			 
+         <img alt="" src="images/f18-cloud.png" width="0" height="0" />&#160;
+         <img alt="" src="images/f18-gentext.png" width="0" height="0" />&#160;	 
+         <img alt="" src="images/f18-gen.png" width="0" height="0" />&#160;
+         <img alt="" src="images/f18-deltext.png" width="0" height="0" />&#160;	
+		 <img alt="" src="images/f18-del.png" width="0" height="0" />&#160;		
+          <img alt="" src="images/f19-text1.png" width="0" height="0" />&#160;	
+          <img alt="" src="images/f19-text2.png" width="0" height="0" />&#160;
+          <img alt="" src="images/f19-text3.png" width="0" height="0" />&#160;
+          <img alt="" src="images/f19-s1.png" width="0" height="0" />&#160;
+          <img alt="" src="images/f19-s2.png" width="0" height="0" />&#160;
+          <img alt="" src="images/f19-s3.png" width="0" height="0" />&#160;
+          <img alt="" src="images/f19-c1.png" width="0" height="0" />&#160;
+          <img alt="" src="images/f19-c2.png" width="0" height="0" />&#160;
+          <img alt="" src="images/f19-c3.png" width="0" height="0" />&#160;		                                           
+           <img alt="" src="images/f20-bar1.png" width="0" height="0" />&#160;	                                        
+           <img alt="" src="images/f20-label1.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f20-bar2.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f20-label2.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f21-greenbox.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f21-tier1_text.png" width="0" height="0" />&#160;										 
+           <img alt="" src="images/f22-yellowbox.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f22-text.png" width="0" height="0" />&#160;                                             
+           <img alt="" src="images/f23-yellowbox.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f23-text.png" width="0" height="0" />&#160;               
+           <img alt="" src="images/f24-greenbox.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f24-tier1text.png" width="0" height="0" />&#160;               
+           <img alt="" src="images/f24-tier2bar.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f24-next-tier.png" width="0" height="0" />&#160;      
+           <img alt="" src="images/f24-tier3bar.png" width="0" height="0" />&#160;	   
+           <img alt="" src="images/f24-gtext.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f24-word2.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f24-word3.png" width="0" height="0" />&#160;
+		   <img alt="" src="images/f24-disclaimer.png" width="0" height="0" />&#160;
+		   <img alt="" src="images/f24-arrow.png" width="0" height="0" />&#160;			   
+		   <img alt="" src="images/f27-cloud.png" width="0" height="0" />&#160;	                       
+		   <img alt="" src="images/f27-title.png" width="0" height="0" />&#160;	 					   
+		   <img alt="" src="images/f27-tier1.png" width="0" height="0" />&#160;	 					   
+		   <img alt="" src="images/f27-treegrass.png" width="0" height="0" />&#160;	                       
+		   <img alt="" src="images/f27-mountain.png" width="0" height="0" />&#160;	 					   
+		   <img alt="" src="images/f27-wave.png" width="0" height="0" />&#160;	 					   					   					   
+		   <img alt="" src="images/f28-bg.png" width="0" height="0" />&#160;						   
+		   <img alt="" src="images/f28-sun.png" width="0" height="0" />&#160;					   
+		   <img alt="" src="images/f28-tier.png" width="0" height="0" />&#160;
+		   <img alt="" src="images/f28-ac.png" width="0" height="0" />&#160;
+		   <img alt="" src="images/f28-air.png" width="0" height="0" />&#160;
+		   <img alt="" src="images/f28-mountain.png" width="0" height="0" />&#160;           
+           <img alt="" src="images/f29-sun.png" width="0" height="0" />&#160;
+		   <img alt="" src="images/f29-cloud.png" width="0" height="0" />&#160;					   
+		   <img alt="" src="images/f29-title.png" width="0" height="0" />&#160;                      
+		   <img alt="" src="images/f29-grass.png" width="0" height="0" />&#160;			   
+		   <img alt="" src="images/f30-bg.png" width="0" height="0" />&#160;					  
+		   <img alt="" src="images/f30-title.png" width="0" height="0" />&#160;					  
+		   <img alt="" src="images/f30-acc1.png" width="0" height="0" />&#160;						  
+		   <img alt="" src="images/f30-acc2.png" width="0" height="0" />&#160;	
+		   <img alt="" src="images/f30-acc3.png" width="0" height="0" />&#160;					  
+		   <img alt="" src="images/f30-acc4.png" width="0" height="0" />&#160;					  					  
+		   <img alt="" src="images/f31-cloud.png" width="0" height="0" />&#160;                       
+		   <img alt="" src="images/f31-title.png" width="0" height="0" />&#160; 
+		   <img alt="" src="images/f31-grass.png" width="0" height="0" />&#160; 
+		   <img alt="" src="images/f33-sun.png" width="0" height="0" />&#160; 
+		   <img alt="" src="images/f33-house.png" width="0" height="0" />&#160; 
+		   <img alt="" src="images/f33-pole.png" width="0" height="0" />&#160; 
+		   <img alt="" src="images/f33-wind.png" width="0" height="0" />&#160; 
+		   <img alt="" src="images/f33-ac.png" width="0" height="0" />&#160;
+		   <img alt="" src="images/f33-air.png" width="0" height="0" />&#160;		   
+		   <img alt="" src="images/f33-tree.png" width="0" height="0" />&#160;		   	   
+		   <img alt="" src="images/f34-house.png" width="0" height="0" />&#160;			   
+		   <img alt="" src="images/f35-pole.png" width="0" height="0" />&#160;	                                               
+		   <img alt="" src="images/f35-wire.png" width="0" height="0" />&#160;	
+		   <img alt="" src="images/f35-house.png" width="0" height="0" />&#160;	
+           
+           <img alt="" src="images/f36-ac.png" width="0" height="0" />&#160;	
+           <img alt="" src="images/f37-pool.png" width="0" height="0" />&#160;	
+           <img alt="" src="images/f37-fridge.png" width="0" height="0" />&#160;
+           	
+           <img alt="" src="images/f38-hvac.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f38-title.png" width="0" height="0" />&#160; 
+           <img alt="" src="images/f38-ac.png" width="0" height="0" />&#160;           
+           <img alt="" src="images/f39-ac.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f39-wind.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f39-sun.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f39-cloud.png" width="0" height="0" />&#160;           
+           <img alt="" src="images/f40-noglow.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f40-glow.png" width="0" height="0" />&#160;         
+           <img alt="" src="images/f41-cloud.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f41-ther.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f41-light.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f41-theron.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f41-lamp.png" width="0" height="0" />&#160;          
+           <img alt="" src="images/f43-title.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f43-ac78.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f44-ac83.png" width="0" height="0" />&#160;          
+           <img alt="" src="images/f45-clock.png" width="0" height="0" />&#160;         
+           <img alt="" src="images/f46-mobile.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f47-title.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f47-disclaimer.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f48-logo.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f49-line1.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f49-line2.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f49-line3.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f49-line4.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f50-icon1.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f50-text1.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f50-icon2.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f50-text2.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f50-icon3.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f50-text3.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f51-pool.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f51-fridge.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f52-title.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f52-sun.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f52-cloud.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f52-pump.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f52-pool.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f52-ladder.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f52-water.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f52-chair.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f53-title.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f54-title.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f54-pool.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f54-wave.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f55-bullet1.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f55-waterjar.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f56-bullet2.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f56-clock.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f56-3hour.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f57-bullet3.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f57-net.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f57-leaves.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f57-text.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f58-bullet4.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f58-text.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f59-bullet5.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f59-drain.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f59-bubble1.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f59-bubble2.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f59-bubble3.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f60-sun.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f60-cloud.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f60-mountain.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f60-title.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f60-fridge.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f61-fridge.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f62-title.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f62-energystar.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f63-title.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f63-truck.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f63-dollyfridge.png" width="0" height="0" />&#160;
+           
+           <img alt="" src="images/f64-title.png" width="0" height="0" />&#160;         
+           <img alt="" src="images/f65-sun.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f65-cloud.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f65-mountain.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f65-tree.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f65-fruittree.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f65-house.png" width="0" height="0" />&#160;
+           <img alt="" src="images/f65-title.png" width="0" height="0" />&#160;
+
+    </div>
+	<div id="mainwindow"><!--main window starts-->
+    		<div id="frame-wrapper"><!--frame wrapper starts-->
+            <div class="frames" id="frame1">
+            			<audio id="soundEffectUpDown" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/up_and_down.ogg" type="audio/ogg">
+                          <source src="audio/up_and_down.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="soundEffectUpDown_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/up_and_down.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="soundEffectElevate" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/Elevate.ogg" type="audio/ogg">
+                          <source src="audio/Elevate.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="soundEffectElevate_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/Elevate.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="soundEffectClock" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/tickling_clock.ogg" type="audio/ogg">
+                          <source src="audio/tickling_clock.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="soundEffectClock_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/tickling_clock.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="soundEffectBubble" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/underwater_bubble.ogg" type="audio/ogg">
+                          <source src="audio/underwater_bubble.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="soundEffectBubble_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/underwater_bubble.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="soundEffectWhoosh" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/whoosh.ogg" type="audio/ogg">
+                          <source src="audio/whoosh.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="soundEffectWhoosh_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/whoosh.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="soundEffectMoney" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/money.ogg" type="audio/ogg">
+                          <source src="audio/money.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="soundEffectMoney_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/money.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="f63Truck" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/f63_truck.ogg" type="audio/ogg">
+                          <source src="audio/f63_truck.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="f63Truck_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/f63_truck.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="f52WaterSplash" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/f52_water_splash.ogg" type="audio/ogg">
+                          <source src="audio/f52_water_splash.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="f52WaterSplash_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/f52_water_splash.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="f46PhoneAlert" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/f46_phone_alert.ogg" type="audio/ogg">
+                          <source src="audio/f46_phone_alert.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="f46PhoneAlert_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/f46_phone_alert.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="f39Power" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/power_stress.ogg" type="audio/ogg">
+                          <source src="audio/power_stress.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="f39Power_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/power_stress.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="f27CostalCool" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/f27_coastal_cool.ogg" type="audio/ogg">
+                          <source src="audio/f27_coastal_cool.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="f27CostalCool_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/f27_coastal_cool.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+            			<audio id="f12Working" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/f12_working.ogg" type="audio/ogg">
+                          <source src="audio/f12_working.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="f12Working_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/f12_working.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+                		<audio id="f11Laundry" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/f11_laundry.ogg" type="audio/ogg">
+                          <source src="audio/f11_laundry.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="f11Laundry_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/f11_laundry.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+                		<audio id="f10TVCheering" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/f10_tv_cheering.ogg" type="audio/ogg">
+                          <source src="audio/f10_tv_cheering.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="f10TVCheering_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/f10_tv_cheering.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+                		<audio id="iconPopup" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/icon_popup.ogg" type="audio/ogg">
+                          <source src="audio/icon_popup.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="iconPopup_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/icon_popup.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+                		<audio id="iconPress" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/icon_press.ogg" type="audio/ogg">
+                          <source src="audio/icon_press.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="iconPress_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/icon_press.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+                        
+                		<audio id="linkPress" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/link_press.ogg" type="audio/ogg">
+                          <source src="audio/link_press.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="linkPress_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/link_press.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>                
+                		<audio id="mainNavPress" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/main_nav_press.ogg" type="audio/ogg">
+                          <source src="audio/main_nav_press.mp3" type="audio/mpeg">
+                        </audio>
+ 						<object id="mainNavPress_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/main_nav_press.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>
+                
+                        <audio id="bgmusic" style="display: none; opacity: 0;" loop="auto" controls="controls" preload="auto">
+                          <source src="audio/Happy_track.ogg" type="audio/ogg">
+                          <source src="audio/Happy_track.mp3" type="audio/mpeg">                         
+                        </audio> 
+                        <object id="bgmusic_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/Happy_track.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="30" />
+                            <param name="playCount" value="2147483647" />
+			            </object>
+                                                <object id="f3audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f3.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+			            </object>                        
+                        <object id="f4audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f4.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object>            	
+                         <object id="f5Aaudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f5a.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+
+                        <object id="f5Baudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f5b.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+
+                        <object id="f6audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f6.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+
+                        <object id="f7audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f7.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 	
+						
+                        <object id="f10audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f10.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f11audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f11.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f12audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f12.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f13audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f13.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f14Aaudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f14a.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f14Baudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f14b.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f14Caudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f14c.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f17audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f17.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f18Aaudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f18a.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f18Baudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f18b.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 						
+						
+						<object id="f19audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f19.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f20audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f20.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f21audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f21.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f24audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f24.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f25audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f25.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f26audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f26.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f27Aaudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f27a.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f27Baudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f27b.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f29audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f29.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f30audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f30.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f31audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f31.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f32audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f32.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f33audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f33.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f35Aaudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f35a.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f35Baudio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f35b.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f36audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f36.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f37audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f37.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f38audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f38.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f39audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f39.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f41audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f41.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f43audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f43.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f46audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f46.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f47audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f47.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f48audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f48.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f49audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f49.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f50audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f50.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f51audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f51.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f52audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f52.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f53audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f53.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f54audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f54.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f55audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f55.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f56audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f56.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f57audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f57.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f58audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f58.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f59audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f59.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						<object id="f60audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f60.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f62audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f62.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f63audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f63.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f64audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f64.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 	
+						<object id="f65audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f65.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                        </object> 	
+						<object id="f66audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f66.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />  
+                        </object> 
+						<object id="f67audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f67.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" /> 
+                        </object> 	
+						<object id="f68audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f68.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />  
+                        </object> 
+						
+						<object id="f69audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f69.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object> 
+						
+						<object id="f70audio_ie8" classid="clsid:6BF52A52-394A-11d3-B153-00C04F79FAA6" style="display:none;"> 
+                            <param name="URL" value="audio/SCE_f70.mp3" />
+                            <param name="uiMode" value="invisible" /> 
+                            <param name="autoStart" value="false" />
+                            <param name="volume" value="100" />
+                            
+                        </object>
+                		<div id="frameNum"></div>
+                		<!-- preloading text and spinner -->
+                        <div id="gobackward"></div>
+						<div id="playpause"></div>
+                        <div id="goforward"></div>
+                        <div id="loadingSpinner"><img src="images/loading_spinner.gif" width="100" height="100" border="0" /></div>
+                		<div id="preloader1"><img src="images/preloader1.png" alt="Please turn on your speakers." width="468" height="33" border="0"  /></div>
+                        <div id="preloader2"><img src="images/preloader2.png" alt="Welcome to the Energy &amp; You interactive tour." width="482" height="69" border="0"  /></div>
+                        <div id="preloader3"><img src="images/preloader3.png" alt="We are getting energized. Please stand by." width="411" height="75" border="0"  /></div>
+		                <div id="f1-cloud" class="frameob" style="background:url(images/f1-cloud.png) no-repeat;"></div>
+                        <div id="f1-sun"class="frameob"  style="background:url(images/f1-sun.png) no-repeat;"></div>
+                        <div id="f1-grass" class="frameob" style="background:url(images/f1-grass.png) no-repeat;"></div>
+                        <div id="f1-logo" class="frameob" style="background:url(images/f1-logo.png) no-repeat;"></div>
+                        <div id="f2-maintitle" class="frameob"><img src="images/f2-maintitle.png" alt="Energy &amp; You" width="535" height="72" border="0"  /></div>
+                        <div id="f2-subtitle" class="frameob"><img src="images/f2-subtitle.png" alt="Learn about your usage and ways to save" width="535" height="31" border="0"  /></div>
+                        <div id="f2-bottomtitle" class="frameob"><img src="images/f2-bottomtitle.png" alt="Please turn on your speakers" width="535" height="25" border="0"  /></div>  
+                        <!-------------------------------------------- frame 3 Energy Basics -------------------------------------------->  
+                        <div id="f3-maintitle" class="frameob"><img src="images/f3-maintitle.png" alt="Hi there! What should we talk about?" width="606" height="31" border="0"  /></div>
+                        <div id="f3-link" class="frameob"><a href="#" id="f3link1" tabindex="1">Energy Basics</a>, </div>
+                        <div id="f3-question" class="frameob"><a href="#" id="f3link2" tabindex="2">Ways to Save</a> <span style="color: #2f2f2f;">&nbsp;or&nbsp;</span> <a href="#" id="f3link3" tabindex="3">Resources</a></div>
+                        <audio id="f3Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f3.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f3.mp3" type="audio/mpeg">                         
+                        </audio>                        
+                        <!-------------------------------------------- frame 4 Energy Basics -------------------------------------------->  
+                        <div id="f4-bill" class="frameob"><img src="images/f4-bill.png" alt="bill" width="405" height="467" border="0"  /></div>
+                        <div id="f4-qcharge" class="frameob" tabindex="1">
+                        	<img id="f4qcharge_sml" src="images/f4-qcharge_smaller.png" alt="what are these charges?" width="222" height="162" border="0"  />
+                        	<img id="f4qcharge" src="images/f4-qcharge.png" alt="what are these charges?" width="222" height="162" border="0"  />                            
+                        </div>
+                        <div id="f4-qtier" class="frameob" tabindex="2">
+                            <img id="f4qtier_sml" src="images/f4-qtier_smaller.png" alt="what's a Tier?" width="146" height="131" border="0"  />
+                        	<img id="f4qtier" src="images/f4-qtier.png" alt="what's a Tier?" width="146" height="131" border="0"  />
+                        </div>
+                        <div id="f4-qkwh" class="frameob" tabindex="3">
+                        	<img id="f4qkwh_sml" src="images/f4-qkwh_smaller.png" alt="what's a kWh?" width="237" height="223" border="0"  />
+                            <img id="f4qkwh" src="images/f4-qkwh.png" alt="what's a kWh?" width="237" height="223" border="0"  />
+                        </div> 
+                        <div id="f4-qbasics" class="frameob">
+                        	<a href="http://www.youtube.com/watch?v=5YVg_YolkpA" target="_blank" tabindex="4" onclick="PausePlay()">
+                            <img id="f4qbasics_sml" src="images/f4-qbasics_smaller.png" alt="I need the basics first" width="167" height="159" border="0"  />
+                        	<img id="f4qbasics" src="images/f4-qbasics.png" alt="I need the basics first" width="167" height="159" border="0"  />
+                            </a>
+                         </div>
+                         <audio id="f4Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f4.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f4.mp3" type="audio/mpeg">                         
+                        </audio>                                           
+                        <!-------------------------------------------- frame 5 Energy Basics -------------------------------------------->  
+                        <div id="f5-bg" class="frameob"><img src="images/f5-bg.png" alt="bill" width="960" height="601" border="0"  /></div>
+                        <div id="f5-bill" class="frameob"><img src="images/f5-bill.png" alt="bill" width="616" height="564" border="0"  /></div>
+                        <div id="f5-kwh" class="frameob"><img src="images/f5-kwh.png" alt="Kilowatt-hour" width="533" height="113" border="0"  /></div> 
+                        <audio id="f5AudioA" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f5a.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f5a.mp3" type="audio/mpeg">                          
+                        </audio>     
+                                          
+                        <audio id="f5AudioB" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f5b.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f5b.mp3" type="audio/mpeg">       
+                        </audio>                        
+                        <!-------------------------------------------- frame 6 Energy Basics -------------------------------------------->  
+                        <div id="f6-title" class="frameob"><img src="images/f6-title.png" alt="1kWh" width="297" height="89" border="0"  /></div>
+                        <div id="f6-equal" class="frameob"><img src="images/f6-equal.png" alt="=" width="46" height="28" border="0"  /></div>
+                        <div id="f6-hours" class="frameob"><img src="images/f6-hours.png" alt="1000 watt-hours" width="491" height="65" border="0"  /></div>       
+                        <audio id="f6Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f6.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f6.mp3" type="audio/mpeg">
+                        </audio>
+                        <!-------------------------------------------- frame 7 Energy Basics -------------------------------------------->  
+                        <div id="f7-lightbulb" class="frameob"><img src="images/f7-lightbulb.png" alt="Light Bulb" width="142" height="207" border="0"  /></div>
+                        <div id="f7-watts" class="frameob"><img src="images/f7-watts.png" alt="100 watts" width="290" height="63" border="0"  /></div>  
+                        <audio id="f7Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f7.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f7.mp3" type="audio/mpeg">
+                        </audio>
+                        <!-------------------------------------------- frame 8 Energy Basics -------------------------------------------->  
+                        <div id="f8-clock" class="frameob"><img src="images/f8-clock.png" alt="Clock" width="197" height="211" border="0"  /></div>  
+                        <div id="f8-x" class="frameob"><img src="images/f8-x.png" alt="x" width="44" height="50" border="0"  /></div> 
+                        <div id="f8-hours" class="frameob"><img src="images/f8-hours.png" alt="10 hours" width="264" height="58" border="0"  /></div>   
+                        
+                        <!-------------------------------------------- frame 9 Energy Basics -------------------------------------------->  
+                        <div id="f9-lb1" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div>
+                        <div id="f9-lb2" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div>  
+                        <div id="f9-lb3" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div>
+                        <div id="f9-lb4" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div> 
+                        <div id="f9-lb5" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div>  
+                        <div id="f9-lb6" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div>
+                        <div id="f9-lb7" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div>  
+                        <div id="f9-lb8" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div>
+                        <div id="f9-lb9" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div> 
+                        <div id="f9-lb10" class="frameob"><img src="images/f9-lb.png" alt="Light Bulb" width="74" height="110" border="0"  /></div>  
+                        <div id="f9-10" class="frameob"><img src="images/f9-10.png" alt="10" width="76" height="57" border="0"  /></div>
+                        <div id="f9-x" class="frameob"><img src="images/f8-x.png" alt="x" width="44" height="50" border="0"  /></div>  
+                        <div id="f9-watts" class="frameob"><img src="images/f9-watts.png" alt="100 watts" width="293" height="62" border="0"  /></div>
+                        <div id="f9-x1" class="frameob"><img src="images/f9-x1.png" alt="x 1" width="86" height="60" border="0"  /></div> 
+                        <div id="f9-hour" class="frameob"><img src="images/f9-hour.png" alt="hour" width="148" height="60" border="0"  /></div>        
+
+                        <!-------------------------------------------- frame 10 Energy Basics -------------------------------------------->  
+                        <div id="f10-house" class="frameob"><img src="images/f10-house.png" alt="House" width="415" height="342" border="0"  /></div>
+                        <div id="f10-tv" class="frameob"><img src="images/f10-tv.png" alt="T.V." width="93" height="90" border="0"  /></div>  
+                        <div id="f10-tree" class="frameob"><img src="images/f10-tree.png" alt="Tree" width="567" height="91" border="0"  /></div>
+                        <div id="f10-land" class="frameob"><img src="images/f10-land.png" alt="Land" width="960" height="157" border="0"  /></div> 
+                        <div id="f10-title" class="frameob"><img src="images/f10-title.png" alt="10 hours of television" width="428" height="49" border="0"  /></div>  
+                        <div id="f10-text" class="frameob"><img src="images/f10-text.png" alt="Information Sources: U.S. Department of Energy (www.energy.gov). Information provided is approximate and may vary upon age of appliances/devices and usage." width="475" height="22" border="0"  /></div>
+                        <audio id="f10Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f10.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f10.mp3" type="audio/mpeg">
+                          
+                        </audio><br>
+                        <!-------------------------------------------- frame 11 Energy Basics -------------------------------------------->  
+                        <div id="f11-nightbg" class="frameob"><img src="images/f11-nightbg.png" alt="Background" width="960" height="601" border="0"  /></div>
+                        <div id="f11-stars" class="frameob"><img src="images/f11-stars.png" alt="Background" width="942" height="407" border="0"  /></div>
+                        <div id="f11-moon" class="frameob"><img src="images/f11-moon.png" alt="Moon" width="176" height="176" border="0"  /></div>  
+                        <div id="f11-washer" class="frameob"><img src="images/f11-washer.png" alt="Washer" width="98" height="76" border="0"  /></div>
+                        <div id="f11-laundry" class="frameob"><img src="images/f11-laundry.png" alt="12 medium loads of laundry" width="547" height="49" border="0"  /></div> 
+                        <audio id="f11Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f11.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f11.mp3" type="audio/mpeg">
+                          
+                        </audio><br>
+                        <!-------------------------------------------- frame 12 Energy Basics -------------------------------------------->  
+                        <div id="f12-moon" class="frameob"><img src="images/f12-moon.png" alt="Moon" width="176" height="176" border="0"  /></div>
+                        <div id="f12-computer" class="frameob"><img src="images/f12-computer.png" alt="Computer" width="127" height="91" border="0"  /></div>
+                        <div id="f12-title" class="frameob"><img src="images/f12-title.png" alt="7 1/2 hours of computer work" width="547" height="49" border="0"  /></div>
+                         <audio id="f12Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f12.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f12.mp3" type="audio/mpeg">                         
+                        </audio><br>    
+                                           
+                        <!-------------------------------------------- frame 13 Energy Basics -------------------------------------------->  
+                        <div id="f13-bg" class="frameob"><img src="images/bluebg.png" alt="" width="960" height="525" border="0"  /></div>
+                        <div id="f13-kwh" class="frameob"><img src="images/f13-kwh.png" alt="1 kWh" width="238" height="66" border="0"  /></div>  
+                        <div id="f13-equal" class="frameob"><img src="images/f13-equal.png" alt="≈" width="51" height="38" border="0"  /></div>
+                        <div id="f13-cent" class="frameob"><img src="images/f13-cent.png" alt="18 cents" width="127" height="74" border="0"  /></div>
+                        <div id="f13-bar1" class="frameob"><img src="images/f13_bar1.png" alt="" width="383" height="98" border="0"  /></div>
+                        <div id="f13-bar2" class="frameob"><img src="images/f13_bar2.png" alt="" width="198" height="98" border="0"  /></div>
+                        <div id="f13-bar3" class="frameob"><img src="images/f13_bar3.png" alt="" width="192" height="98" border="0"  /></div>
+                        <div id="f13-legal" class="frameob"><img src="images/f13-legal.png" alt="&#42; Average price of around 18 cents per kilowatt-hour is as of 2014" width="384" height="13" border="0"  /></div>
+                         <audio id="f13Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f13.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f13.mp3" type="audio/mpeg">
+                        </audio><br>                       
+                        <!-------------------------------------------- frame 14 Energy Basics -------------------------------------------->  
+                        <div id="f14-map" class="frameob"><img src="images/f14-map.png" alt="Map" width="455" height="450" border="0"  /></div>
+                        <div id="f14-title" class="frameob"><img src="images/f14-title.png" alt="where you live" width="403" height="68" border="0"  /></div>        
+                        <audio id="f14AudioA" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f14a.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f14a.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 15 Energy Basics -------------------------------------------->  
+                        <div id="f15-sky" class="frameob"><img src="images/f15-sky.png" alt="Sky" width="960" height="542" border="0"  /></div>
+                        <div id="f15-suncloud" class="frameob"><img src="images/f15-suncloud.png" alt="Sun and cloud" width="513" height="156" border="0"  /></div>
+                        <div id="f15-mooncloud" class="frameob"><img src="images/f15-mooncloud.png" alt="Moon and cloud" width="406" height="353" border="0"  /></div>
+                        <div id="f15-season" class="frameob"><img src="images/f15-season.png" alt="Season" width="250" height="55" border="0"  /></div>
+                        <div id="f15-rain" class="frameob"><img src="images/f15-rain.png" alt="Rain" width="528" height="279" border="0"  /></div>  
+                        <div id="f15-beach" class="frameob"><img src="images/f15-beach.png" alt="Beach and tdree" width="381" height="291" border="0"  /></div>     
+                        <div id="f15-mountain" class="frameob"><img src="images/f15-mountain.png" alt="Mountain" width="445" height="151" border="0"  /></div>        
+                         <audio id="f14AudioB" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f14b.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f14b.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                       
+                        <!-------------------------------------------- frame 16 Energy Basics Work on Later-------------------------------------------->  
+                        <div id="f16-clock" class="frameob"><img src="images/f16-clock.png" alt="Clock" width="355" height="352" border="0" id="f16clock"  /></div>
+                        <div id="f16-meter" class="frameob" style="background: url('images/f16-meter_reading.gif') 0 0 no-repeat;"></div>
+                        <audio id="f14AudioC" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f14c.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f14c.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 17 Energy Basics -------------------------------------------->  
+                        
+                        <div id="f17-title" class="frameob"><img src="images/f17-title.png" alt="start saving energy..." width="334" height="36" border="0"  /></div>
+                        <div id="f17-actext" class="frameob" tabindex="1"><a href="#">Air Conditioning</a></div>
+                        <div id="f17-ac" class="frameob" tabindex="2">
+                        	<img src="images/f17-ac_smaller.png" alt="AC" width="158" height="157" border="0"  id="f17ac_sml" />
+                        	<img src="images/f17-ac.png" alt="AC" width="158" height="157" border="0"  id="f17ac" />
+                        </div>                         
+                        <div id="f17-pooltext" class="frameob" tabindex="3"><a href="#">Pools</a></div>
+                        <div id="f17-pool" class="frameob" tabindex="4">
+                        	<img src="images/f17-pool_smaller.png" alt="Pool" width="270" height="208" border="0"  id="f17pool_sml" />
+                        	<img src="images/f17-pool.png" alt="Pool" width="270" height="208" border="0"  id="f17pool" />
+                        </div>
+                        <div id="f17-fridgetext" class="frameob" tabindex="5"><a href="#">Refrigerators</a></div>                            
+                        <div id="f17-fridge" class="frameob" tabindex="6">
+                        	<img src="images/f17-fridge_smaller.png" alt="Fridge" width="127" height="211" border="0" id="f17fridge_sml"  />
+                        	<img src="images/f17-fridge.png" alt="Fridge" width="127" height="211" border="0" id="f17fridge"  />
+                        </div>
+                        <div id="f17-continue" class="frameob"><img src="images/f17-continue.png" alt="...or continue to" width="167" height="19" border="0"  /></div>
+                        <div id="f17-question" class="frameob" tabindex="7"><a href="#">What Are These Charges on My Bill?</a></div>
+                         <audio id="f17Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f17.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f17.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <!-------------------------------------------- frame 18 Energy Basics -------------------------------------------->  
+                        <div id="f18-cloud" class="frameob"><img src="images/f18-cloud.png" alt="Cloud" width="931" height="105" border="0"  /></div>
+                        <div id="f18-gentext" class="frameob"><img src="images/f18-gentext.png" alt="Generation Charges" width="322" height="37" border="0"  /></div>
+                        <div id="f18-gen" class="frameob"><img src="images/f18-gen.png" alt="Generation Charges" width="288" height="172" border="0"  /></div>
+                        <div id="f18-deltext" class="frameob"><img src="images/f18-deltext.png" alt="Delivery Charges" width="274" height="39" border="0"  /></div>                            
+                        <div id="f18-del" class="frameob"><img src="images/f18-del.png" alt="Delivery Charges" width="597" height="144" border="0"  /></div>
+                        <div id="f18-grass" class="frameob"><img src="images/f1-grass.png" alt="Grass" width="960" height="223" border="0"  /></div>
+                        <audio id="f18AudioA" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f18a.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f18a.mp3" type="audio/mpeg">
+                          
+                        </audio><br>  
+                         <audio id="f18AudioB" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f18b.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f18b.mp3" type="audio/mpeg">                          
+                        </audio><br>                                            
+                        <!-------------------------------------------- frame 19 Energy Basics -------------------------------------------->        
+                        <div id="f19-text1" class="frameob"><img src="images/f19-text1.png" alt="Generation Charges" width="190" height="21" border="0"  /></div>
+                        <div id="f19-text2" class="frameob"><img src="images/f19-text2.png" alt="Delivery Charges" width="161" height="21" border="0"  /></div>
+                        <div id="f19-text3" class="frameob"><img src="images/f19-text3.png" alt="Others" width="64" height="17" border="0"  /></div>
+                        <div id="f19-s1" class="frameob"><img src="images/f19-s1.png" alt="Generation Charges" width="332" height="25" border="0"  /></div>
+                        <div id="f19-s2" class="frameob"><img src="images/f19-s2.png" alt="Delivery Charges" width="171" height="25" border="0"  /></div>                            
+                        <div id="f19-s3" class="frameob"><img src="images/f19-s3.png" alt="Others" width="115" height="25" border="0"  /></div>
+                        <div id="f19-cash1" class="frameob"><img src="images/f19-c1.png" alt="Generation Charges" width="338" height="278" border="0"  /></div>
+                        <div id="f19-cash2" class="frameob"><img src="images/f19-c2.png" alt="Delivery Charges" width="174" height="278" border="0"  /></div>
+                        <div id="f19-cash3" class="frameob"><img src="images/f19-c3.png" alt="Others" width="121" height="278" border="0"  /></div>
+                         <audio id="f19Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f19.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f19.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <!-------------------------------------------- frame 20 Energy Basics -------------------------------------------->  
+                        <div id="f20-bar1" class="frameob"><img src="images/f20-bar1.png" alt="Bar" width="18" height="358" border="0"  /></div>
+                        <div id="f20-label1" class="frameob"><img src="images/f20-label1.png" alt="Price" width="240" height="67" border="0"  /></div>
+                        <div id="f20-bar2" class="frameob"><img src="images/f20-bar2.png" alt="Bar" width="18" height="358" border="0"  /></div>
+                        <div id="f20-label2" class="frameob"><img src="images/f20-label2.gif" alt="Usage" width="241" height="300" border="0"  /></div>
+                         <audio id="f20Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f20.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f20.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                           
+                     
+                        <!-------------------------------------------- frame 21 Energy Basics -------------------------------------------->  
+                        <div id="f21-grass" class="frameob"><img src="images/f1-grass.png" alt="Grass" width="960" height="223" border="0"  /></div>
+                        <div id="f21-greenbox" class="frameob"><img src="images/f21-greenbox.png" alt="Tier 1 (Baseline Rate)" width="389" height="98" border="0"  /></div>
+                        <div id="f21-text" class="frameob"><img src="images/f21-text.png" alt="Tier 1 (Baseline Rate)" width="101" height="61" border="0"  /></div>
+                         <audio id="f21Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f21.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f21.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <!-------------------------------------------- frame 22 Energy Basics -------------------------------------------->  
+                        <div id="f22-yellowbox" class="frameob"><img src="images/f22-yellowbox.png" alt="$$ Next Tier" width="389" height="107" border="0"  /></div>
+                        <div id="f22-text" class="frameob"><img src="images/f22-text.png" alt="$$ Next Tier" width="90" height="41" border="0"  /></div>
+                        
+                        <!-------------------------------------------- frame 23 Energy Basics -------------------------------------------->  
+                        <div id="f23-yellowbox" class="frameob"><img src="images/f23-yellowbox.png" alt="$$$ Next Tier" width="389" height="128" border="0"  /></div>
+                        <div id="f23-text" class="frameob"><img src="images/f23-text.png" alt="$$$ Next Tier" width="90" height="40" border="0"  /></div>
+                        
+                        <!-------------------------------------------- frame 24 Energy Basics -------------------------------------------->  
+                        <div id="f24-greenbox" class="frameob"><img src="images/f24-greenbox.png" alt="Tier 1" width="383" height="102" border="0"  /></div>
+                        <div id="f24-tier1text" class="frameob"><img src="images/f24-tier1text.png" alt="Tier 1(Baseline Rate)" width="230" height="20" border="0"  /></div>
+                        <div id="f24-tier2bar" class="frameob"><img src="images/f24-tier2_bar.png" alt="Tier 2" width="198" height="104" border="0"  /></div>
+                        <div id="f24-tier2text" class="frameob"><img src="images/f24-next-tier.png" alt="Next Tier" width="102" height="24" border="0"  /></div>
+                        <div id="f24-tier3bar" class="frameob"><img src="images/f24-tier3bar.png" alt="Tier 3" width="192" height="104" border="0"  /></div>
+                        <div id="f24-tier3text" class="frameob"><img src="images/f24-next-tier.png" alt="Next Tier" width="102" height="24" border="0"  /></div>
+                          <audio id="f24Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f24.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f24.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                                              
+                        <!-------------------------------------------- frame 25/26 Energy Basics -------------------------------------------->  
+                        <div id="f25-word1" class="frameob"><img src="images/f24-gtext.png" alt="($) Lowest Price per kWh" width="283" height="23" border="0"  /></div>
+                        <div id="f25-word2" class="frameob"><img src="images/f24-word2.png" alt="$$" width="47" height="26" border="0"  /></div>
+                        <div id="f25-word3" class="frameob"><img src="images/f24-word3.png" alt="($$$) Highest Pricer per kWh" width="151" height="76" border="0"  /></div>
+                        <div id="f25-disclaimer" class="frameob"><img src="images/f24-disclaimer.png" alt="This is just an example. Your price per kWh and the number of tiers might be different." width="457" height="52" border="0"  /></div>
+                        <div id="f25-arrow" class="frameob"><img src="images/f24-arrow.png" alt="Next Tier" width="277" height="123" border="0"  /></div>
+                           <audio id="f25Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f25.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f25.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                          <audio id="f26Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f26.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f26.mp3" type="audio/mpeg">
+                          
+                        </audio><br>   
+                        <!-------------------------------------------- frame 27 Energy Basics -------------------------------------------->  
+                        <div id="f27-cloud" class="frameob"><img src="images/f27-cloud.png" alt="Cloud" width="241" height="170" border="0"  /></div>
+                        <div id="f27-title" class="frameob"><img src="images/f27-title.png" alt="Your Baseline Rate" width="299" height="26" border="0"  /></div>
+                        <div id="f27-tier1" class="frameob"><img src="images/f27-tier1.png" alt="bill" width="196" height="53" border="0"  /></div>
+                        <div id="f27-treegrass" class="frameob"><img src="images/f27-treegrass.png" alt="Tree and grass" width="504" height="317" border="0"  /></div>
+                        <div id="f27-fan" class="frameob"><img src="images/f27-fan.png" alt="Fan" width="133" height="174" border="0"  /></div>
+                        <div id="f27-mountain" class="frameob"><img src="images/f27-mountain.png" alt="Mountain" width="870" height="129" border="0"  /></div>
+                        <div id="f27-wave" class="frameob"><img src="images/f27-wave.png" alt="Wave" width="267" height="130" border="0"  /></div>
+                        <audio id="f27AudioA" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f27a.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f27a.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <audio id="f27AudioB" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f27b.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f27b.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 28 Energy Basics -------------------------------------------->  
+                        <div id="f28-bg" class="frameob"><img src="images/f28_bg.png" alt="Background" width="960" height="601" border="0"  /></div>
+                        <div id="f28-sun" class="frameob"><img src="images/f28-sun.png" alt="Sun" width="240" height="256" border="0"  /></div>
+                        <div id="f28-tier" class="frameob"><img src="images/f28-tier.png" alt="Tier 1 " width="290" height="53" border="0"  /></div>
+                        <div id="f28-ac" class="frameob"><img src="images/f28-ac.png" alt="AC" width="170" height="112" border="0"  /></div>
+                        <div id="f28-air" class="frameob"><img src="images/f28-air.png" alt="Air" width="152" height="56" border="0"  /></div>
+                        <div id="f28-mountain" class="frameob"><img src="images/f28-mountain.png" alt="Mountain" width="960" height="108" border="0"  /></div>
+                        
+                        <!-------------------------------------------- frame 29 Energy Basics -------------------------------------------->  
+                        <!-- Added sun -->
+                        <div id="f29-sun" class="frameob"><img src="images/f29-sun.png" alt="Sun" width="395" height="384" border="0"  /></div>
+                        <div id="f29-cloud" class="frameob"><img src="images/f29-cloud.png" alt="Cloud" width="950" height="135" border="0"  /></div>
+                        <div id="f29-title" class="frameob"><img src="images/f29-title.png" alt="Curious about your baseline rate?" width="537" height="32" border="0"  /></div>
+                        <div id="f29-learnmore" class="frameob"><a href="https://www.sce.com/wps/portal/home/residential/rates/residential-plan" target="_blank" tabindex="1" onclick="PausePlay()">Learn more > </a><span style="color: #2f2f2f;">&nbsp;&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;</span></div>
+                        <div id="f29-question" class="frameob"><a href="#" tabindex="2">Continue to discover My Account > </a></div>
+                        <div id="f29-grass" class="frameob"><img src="images/f29-grass.png" alt="Grass" width="960" height="155" border="0"  /></div>
+                        <audio id="f29Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f29.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f29.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <!-------------------------------------------- frame 30 Energy Basics -------------------------------------------->  
+                        <div id="f30-bg" class="frameob"><img src="images/f30-bg.png" alt="Background" width="960" height="601" border="0"  /></div>
+                        <div id="f30-title" class="frameob"><img src="images/f30-title.png" alt="My Account" width="240" height="40" border="0"  /></div>
+                        <div id="f30-acc1" class="frameob"><img src="images/f30-acc1.png" alt="Account Details 1" width="198" height="256" border="0"  /></div>
+                        <div id="f30-acc2" class="frameob"><img src="images/f30-acc2.png" alt="Account Details 2" width="202" height="260" border="0"  /></div>
+                        <div id="f30-acc3" class="frameob"><img src="images/f30-acc3.png" alt="Account Details 3" width="275" height="125" border="0"  /></div>
+                        <div id="f30-acc4" class="frameob"><img src="images/f30-acc4.png" alt="Account Details 4" width="276" height="125" border="0"  /></div>
+                         <audio id="f30Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f30.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f30.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 31/32 Energy Basics -------------------------------------------->  
+                        
+                        <div id="f31-cloud" class="frameob"><img src="images/f31-cloud.png" alt="Cloud" width="950" height="135" border="0"  /></div>
+                        <div id="f31-title" class="frameob"><img src="images/f31-title.png" alt="What would you like to do?" width="437" height="32" border="0"  /></div>
+                        <div id="f31-text1" class="frameob"><a href="http://www.on.sce.com/myaccount" target="_blank" tabindex="1" onclick="PausePlay()">Go to My Account ></a><span style="color: #2f2f2f;">&nbsp;&nbsp;&nbsp;or&nbsp;&nbsp;</span></div>
+                        <div id="f31-text3" class="frameob"><a href="#" tabindex="2">Continue to discover Ways to Save ></a></div>
+                        <div id="f31-grass" class="frameob"><img src="images/f31-grass.png" alt="Grass" width="960" height="155" border="0"  /></div>
+                         <audio id="f31Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f31.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f31.mp3" type="audio/mpeg">
+                          
+                        </audio><br> 
+                         <audio id="f32Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f32.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f32.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                                                   
+                        <!-------------------------------------------- frame 33 / 34 Energy Basics -------------------------------------------->  
+                        
+                        <div id="f33-sun" class="frameob"><img src="images/f33-sun.png" alt="Sun" width="189" height="189" border="0"  /></div>
+                        <div id="f33-house" class="frameob"><img src="images/f33-house.png" alt="House" width="424" height="342" border="0"  /></div>
+                        <div id="f33-pole" class="frameob"><img src="images/f33-pole.png" alt="Pole" width="319" height="380" border="0"  /></div>
+                        <div id="f33-wind" class="frameob"><img src="images/f33-wind.png" alt="Wind" width="322" height="371" border="0"  /></div>
+                        <div id="f33-ac" class="frameob"><img src="images/f33-ac.png" alt="AC" width="45" height="51" border="0"  /></div>
+                        <div id="f33-air" class="frameob"><img src="images/f33-air.png" alt="Air" width="58" height="79" border="0"  /></div> 
+                        <div id="f33-tree" class="frameob"><img src="images/f33-tree.png" alt="Tree" width="457" height="42" border="0"  /></div>    
+                          <audio id="f33Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f33.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f33.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <div id="f34-house" class="frameob"><img src="images/f34-house.png" alt="House" width="424" height="342" border="0"  /></div>     
+                        
+                        <!-------------------------------------------- frame 35 Energy Basics --------------------------------------------> 
+                        <div id="f35-sun" class="frameob"><img src="images/f35-rotating_sun.gif" alt="Sun" width="272" height="272" border="0"  /></div>
+                        <div id="f35-pole" class="frameob"><img src="images/f35-pole.png" alt="Powerpole" width="136" height="326" border="0"  /></div>
+                        <div id="f35-wire" class="frameob"><img src="images/f35-dottedwire.gif" alt="power wire" width="153" height="86" border="0"  /></div> 
+                        <div id="f35-house" class="frameob"><img src="images/f35-house.png" alt="House" width="424" height="342" border="0"  /></div>                        
+                        <audio id="f35AudioA" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f35a.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f35a.mp3" type="audio/mpeg">                          
+                        </audio><br>  
+                         <audio id="f35AudioB" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f35b.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f35b.mp3" type="audio/mpeg">                          
+                        </audio><br>                       
+
+                        <!-------------------------------------------- frame 36/37  Ways To Save -------------------------------------------->  
+                        <div id="f36-actext" class="frameob" tabindex="1"><a href="#">Air Conditioning</a></div>                        
+                        <div id="f36-ac" class="frameob" tabindex="2">
+                            <img src="images/f36-ac_smaller.png" alt="AC" width="170" height="168" border="0"  id="f36ac_sml" />
+                            <img src="images/f36-ac.png" alt="AC" width="170" height="168" border="0"  id="f36ac" />
+                        </div>
+                        <div id="f36-pooltext" class="frameob"><a href="#" tabindex="3">Pools</a></div>                        
+                        <div id="f36-pool" class="frameob" tabindex="4">
+                            <img src="images/f37-pool_smaller.png" alt="Pool" width="267" height="198" border="0"  id="f36pool_sml" />
+                            <img src="images/f37-pool.png" alt="Pool" width="267" height="198" border="0"  id="f36pool" />
+                        </div>
+                        <div id="f36-fridgetext" class="frameob"><a href="#" tabindex="5">Refrigerators</a></div>
+                        <div id="f36-fridge" class="frameob" tabindex="6">
+                            <img src="images/f37-fridge_smaller.png" alt="Fridge" width="148" height="237" border="0" id="f36fridge_sml" />
+                            <img src="images/f37-fridge.png" alt="Fridge" width="148" height="237" border="0" id="f36fridge" />
+                        </div>
+                        <audio id="f36Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f36.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f36.mp3" type="audio/mpeg">
+                          
+                        </audio><br>  
+                        <audio id="f37Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f37.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f37.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                      
+                        <!-------------------------------------------- frame 38  Ways To Save -------------------------------------------->  
+                        <div id="f38-hvac" class="frameob"><img src="images/f38-hvac.png" alt="Heating Ventilation Air Conditioning" width="771" height="41" border="0"  /></div>                        
+                        <div id="f38-title" class="frameob"><img src="images/f38-title.png" alt="HVAC" width="159" height="47" border="0"  /></div>
+                        <div id="f38-ac" class="frameob"><img src="images/f38-ac.png" alt="ac" width="277" height="185" border="0"  /></div>                        
+                        <audio id="f38Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f38.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f38.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                          
+                        <!-------------------------------------------- frame 39  Ways To Save -------------------------------------------->  
+                        <div id="f39-ac1" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                        
+                        <div id="f39-ac2" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>
+                        <div id="f39-ac3" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac4" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac5" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac6" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac7" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac8" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac9" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac10" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac11" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-ac12" class="frameob"><img src="images/f39-ac.png" alt="AC" width="148" height="99" border="0"  /></div>                       
+                        <div id="f39-wind" class="frameob"><img src="images/f39-wind.png" alt="Wind" width="847" height="424" border="0"  /></div>
+                        <div id="f39-sun" class="frameob"><img src="images/f39-sun.png" alt="Sun" width="306" height="132" border="0"  /></div>
+                        <div id="f39-cloud" class="frameob"><img src="images/f39-cloud.png" alt="Cloud" width="950" height="135" border="0"  /></div>
+                        <audio id="f39Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f39.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f39.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                          
+                        <!-- Cut neighborhoods --> 
+                        <!-------------------------------------------- frame 40  Ways To Save -------------------------------------------->  
+                        <div id="f40-noglow" class="frameob"><img src="images/f40-noglow.png" alt="Houses" width="960" height="523" border="0"  /></div>                        
+                        <div id="f40-glow" class="frameob"><img src="images/f40-glow.png" alt="Houses" width="960" height="523" border="0"  /></div>                         
+                                                      
+                        <!-------------------------------------------- frame 41/42 Ways To Save -------------------------------------------->  
+                        <div id="f41-cloud" class="frameob"><img src="images/f41-cloud.png" alt="Cloud" width="950" height="135" border="0"  /></div>                                                
+                        <div id="f41-ther" class="frameob"><img src="images/f41-ther.gif" alt="Thermostats" width="234" height="236" border="0"/></div>
+                        <div id="f41-light" class="frameob"><img src="images/f41-light.gif" alt="Lamp" width="176" height="249" border="0"/></div> 
+                        
+                     
+                        <audio id="f41Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f41.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f41.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                               
+                        <!-------------------------------------------- frame 43/44 Ways To Save -------------------------------------------->  
+                        <div id="f43-title" class="frameob"><img src="images/f43-title.png" alt="Save Power Days" width="279" height="34" border="0"  /></div>                        
+                        <div id="f43ac78" class="frameob"><img src="images/f43-ac78.png" alt="AC 78" width="352" height="229" border="0"/></div>                       
+                        <div id="f43ac83" class="frameob"><img src="images/f44-ac83.png" alt="AC 83" width="352" height="229" border="0"/></div>                    
+                        <audio id="f43Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f43.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f43.mp3" type="audio/mpeg">
+                          
+                        </audio><br>  
+                        <!-------------------------------------------- frame 45 Ways To Save -------------------------------------------->  
+                        <div id="f45-clock" class="frameob"><img src="images/f45-clock.gif" alt="Clock" width="225" height="229" border="0"  /></div>                       
+                        
+                        <!-------------------------------------------- frame 46 Ways To Save -------------------------------------------->  
+                        <div id="f46-mobile" class="frameob"><img src="images/f46-mobile.png" alt="Mobile" width="154" height="253" border="0"  /></div>                       
+                        <audio id="f46Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f46.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f46.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                          
+                        <!-------------------------------------------- frame 47 Ways To Save -------------------------------------------->  
+                        <div id="f47-title" class="frameob"><img src="images/f47-title.png" alt="Earn up to $100 a year in bill credits&#42;." width="594" height="34" border="0"  /></div>                       
+                        <div id="f47-more" class="frameob" tabindex="1"><a href="https://www.sce.com/wps/portal/home/residential/rebates-savings/save-power-day/" target="_blank" onclick="PausePlay()">Learn more ></a></div>      
+                        <div id="f47-disclaimer" class="frameob"><img src="images/f47-disclaimer.png" alt="&#42; Savings may vary based on actual usage reductions during Save Power Days and other factors" width="599" height="13" border="0"  /></div> 
+                        <audio id="f47Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f47.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f47.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                          
+                        <!-------------------------------------------- frame 48 Ways To Save -------------------------------------------->  
+                        <div id="f48-logo" class="frameob"><img src="images/f48-logo.png" alt="logo" width="463" height="243" border="0"  /></div>
+                         <audio id="f48Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f48.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f48.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <!-------------------------------------------- frame 49 Ways To Save -------------------------------------------->  
+                        <div id="f49-line1" class="frameob"><img src="images/f49-line1.png" alt="Save up to $6,500" width="311" height="54" border="0"  /></div>    
+                        <div id="f49-line2" class="frameob"><img src="images/f49-line2.png" alt="on home energy upgrades" width="419" height="41" border="0"  /></div> 
+                        <div id="f49-line3" class="frameob"><img src="images/f49-line3.png" alt="with Energy Upgrade California" width="514" height="45" border="0"  /></div> 
+                        <div id="f49-link" class="frameob" tabindex="1"><a href="http://www.energyupgradeca.org" target="_blank" onclick="PausePlay()">Visit www.energyupgradeca.org ></a></div> 
+                        <div id="f49-line4" class="frameob"><img src="images/f49-line4.png" alt="Savings may vary based on actual usage reductions during Save Poer Days and other factors." width="591" height="13" border="0"  /></div> 
+                          <audio id="f49Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f49.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f49.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 50 Ways To Save -------------------------------------------->  
+                        <div id="f50-icon1" class="frameob"><img src="images/f50-icon1.png" alt="Rebates & incentives" width="80" height="144" border="0"  /></div>    
+                        <div id="f50-text1" class="frameob"><img src="images/f50-text1.png" alt="Rebates & incentives" width="192" height="69" border="0"  /></div> 
+                        <div id="f50-icon2" class="frameob"><img src="images/f50-icon2.png" alt="Energy upgrade financing" width="171" height="130" border="0"  /></div> 
+                        <div id="f50-text2" class="frameob"><img src="images/f50-text2.png" alt="Energy upgrade financing" width="246" height="75" border="0"  /></div> 
+                        <div id="f50-icon3" class="frameob"><img src="images/f50-icon3.png" alt="Income-qualified assistance" width="96" height="116" border="0"  /></div> 
+                        <div id="f50-text3" class="frameob"><img src="images/f50-text3.png" alt="Income-qualified assistance" width="260" height="69" border="0"  /></div>
+                         <audio id="f50Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f50.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f50.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <!-------------------------------------------- frame 51 Ways To Save -------------------------------------------->  
+                        <div id="f51-pooltext" class="frameob" tabindex="1"><a href="#">Pools</a></div>    
+                        <div id="f51-pool" class="frameob" tabindex="2">
+                        <img src="images/f51-pool_smaller.png" alt="Pools" width="267" height="198" border="0" id="f51pool_sml"  />
+                        <img src="images/f51-pool.png" alt="Pools" width="267" height="198" border="0" id="f51pool"  />
+                        </div> 
+                        <div id="f51-fridgetext" class="frameob" tabindex="3"><a href="#">Refrigerators</a></div> 
+                        <div id="f51-fridge" class="frameob" tabindex="4">
+                        <img src="images/f51-fridge_smaller.png" alt="Fridge" width="148" height="237" border="0" id="f51fridge_sml"  />
+                        <img src="images/f51-fridge.png" alt="Fridge" width="148" height="237" border="0" id="f51fridge"  />
+                        </div>        
+                         <audio id="f51Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f51.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f51.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 52 Ways To Save -------------------------------------------->  
+                        <div id="f52-title" class="frameob"><img src="images/f52-title.png" alt="Pools & Spas" width="201" height="33" border="0"  /></div>    
+                        <div id="f52-sun" class="frameob"><img src="images/f52-sun.png" alt="Sun" width="229" height="145" border="0"  /></div> 
+                        <div id="f52-cloud" class="frameob"><img src="images/f52-cloud.png" alt="Cloud" width="496" height="108" border="0"  /></div> 
+                        <div id="f52-pump" class="frameob"><img src="images/f52-pump.png" alt="Pump" width="225" height="154" border="0"  /></div>
+                        <div id="f52-splash" class="frameob"><img src="images/watersplash-lg.png" alt="" width="126" height="93" border="0"  /></div>        
+                        <div id="f52-pool" class="frameob"><img src="images/f52-pool.png" alt="Pools & Spas" width="960" height="268" border="0"  /></div> 
+                          <audio id="f52Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f52.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f52.mp3" type="audio/mpeg">
+                          
+                        </audio><br>
+                        <!-------------------------------------------- frame 53 Ways To Save -------------------------------------------->  
+                        <div id="f53-title" class="frameob"><img src="images/f53-title.png" alt="Get up to $200 back on a variable speed pool pump" width="401" height="79" border="0"  /></div>    
+                        <div id="f53-apply" class="frameob" tabindex="1"><a href="https://www.sce.com/wps/portal/home/residential/rebates-savings/rebates/" target="_blank" onclick="PausePlay()">Apply for the Rebate > </a></div>
+                         <audio id="f53Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f53.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f53.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 54 Ways To Save -------------------------------------------->  
+                        <div id="f54-title" class="frameob"><img src="images/f54-title.png" alt="Tips for an efficient pool" width="370" height="33" border="0"  /></div>    
+                        <div id="f54-pool" class="frameob"><img src="images/f54-pool.png" alt="Pool" width="960" height="152" border="0"  /></div>
+                        <div id="f54-wave" class="frameob"><img src="images/f54-wave.png" alt="Waves" width="863" height="37" border="0"  /></div>
+                         <audio id="f54Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f54.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f54.mp3" type="audio/mpeg">
+                          
+                        </audio><br>
+                        <!-------------------------------------------- frame 55 Ways To Save -------------------------------------------->  
+                        <div id="f55-bullet1" class="frameob"><img src="images/f55-bullet1.png" alt="1. Run Your Pool Pump Less Often" width="378" height="25" border="0"  /></div>    
+                        <div id="f55-waterjar" class="frameob"><img src="images/f55-waterjar.png" alt="Chemical" width="167" height="245" border="0"  /></div>
+                         <audio id="f55Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f55.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f55.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 56 Ways To Save -------------------------------------------->  
+                        <div id="f56-bullet2" class="frameob"><img src="images/f56-bullet2.png" alt="2. Keep the Pump Cycle Short" width="329" height="27" border="0"  /></div>    
+                        <div id="f56-clock" class="frameob"><img src="images/f56-clock.png" alt="Clock" width="105" height="110" border="0"  /></div>
+                        <div id="f56-3hour" class="frameob"><img src="images/f56-3hour.png" alt="3 hours or less" width="100" height="50" border="0"  /></div>
+                         <audio id="f56Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f56.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f56.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                      
+                        <!-------------------------------------------- frame 57 Ways To Save -------------------------------------------->  
+                        <div id="f57-bullet3" class="frameob"><img src="images/f57-bullet3.png" alt="3. Turn It Off to Remove Debris" width="341" height="22" border="0"  /></div>    
+                        <div id="f57-net" class="frameob"><img src="images/f57-net.png" alt="Net" width="144" height="230" border="0"  /></div>
+                        <div id="f57-leaves" class="frameob"><img src="images/f57-leaves.png" alt="Leaves" width="217" height="120" border="0"  /></div>
+                        <div id="f57-text" class="frameob"><img src="images/f57-text.png" alt="SOURCE: SCE.com Pools & Spas: Use & Care" width="290" height="14" border="0"  /></div>
+                        <audio id="f57Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f57.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f57.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                       
+                        <!-------------------------------------------- frame 58 Ways To Save -------------------------------------------->  
+                        <div id="f58-bullet4" class="frameob"><img src="images/f58-bullet4.png" alt="4. Limit Filtration to 3 Hours a Day" width="369" height="25" border="0"  /></div>    
+                        <div id="f58-text" class="frameob"><img src="images/f58-text.png" alt="SOURCE: US Department of Energy. (2012). Installing and Operating an Efficient Swimming Pool Pump. Retrieved Septemeber 28, 2012 from http://energy.gov/energysaver/articles/installing-and-operating-efficient-swimming-pool-pump" width="875" height="37" border="0"  /></div>
+                        <audio id="f58Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f58.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f58.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 59 Ways To Save -------------------------------------------->  
+                        <div id="f59-bullet5" class="frameob"><img src="images/f59-bullet5.png" alt="5. Keep Drains & Grates Clean" width="326" height="24" border="0"  /></div>    
+                        <div id="f59-drain1" class="frameob"><img src="images/f59-drain.png" alt="Drain" width="155" height="65" border="0"  /></div> 
+                        <div id="f59-bubble1" class="frameob"><img src="images/f59-bubble1.png" alt="Bubble" width="67" height="92" border="0"  /></div> 
+                        <div id="f59-drain2" class="frameob"><img src="images/f59-drain.png" alt="Drain" width="155" height="65" border="0"  /></div> 
+                        <div id="f59-bubble2" class="frameob"><img src="images/f59-bubble2.png" alt="Bubble" width="66" height="93" border="0"  /></div> 
+                        <div id="f59-drain3" class="frameob"><img src="images/f59-drain.png" alt="Drain" width="155" height="65" border="0"  /></div> 
+                        <div id="f59-bubble3" class="frameob"><img src="images/f59-bubble3.png" alt="Bubble" width="75" height="87" border="0"  /></div>    			
+                         <audio id="f59Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f59.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f59.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 60 Ways To Save -------------------------------------------->  
+                        <div id="f60-sun" class="frameob"><img src="images/f60-sun.png" alt="Sun" width="209" height="210" border="0"  /></div>    
+                        <div id="f60-cloud" class="frameob"><img src="images/f60-cloud.png" alt="Cloud" width="960" height="128" border="0"  /></div> 
+                        <div id="f60-mountain" class="frameob"><img src="images/f60-mountain.png" alt="Mountain" width="633" height="218" border="0"  /></div> 
+                        <div id="f60-grass" class="frameob"><img src="images/f60-grass.png" alt="Grass" width="960" height="208" border="0"  /></div> 
+                        <div id="f60-title" class="frameob"><img src="images/f60-title.png" alt="Upgrading your fridge could lead to energy savings of $105" width="501" height="75" border="0"  /></div> 
+                        <div id="f60-fridge" class="frameob"><img src="images/f60-fridge.png" alt="Fridge" width="138" height="229" border="0"  /></div>                       
+                         <audio id="f60Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f60.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f60.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                           
+                        <!-------------------------------------------- frame 61 Ways To Save -------------------------------------------->  
+                        <div id="f61-fridge" class="frameob"><img src="images/f61-fridge.png" alt="Fridge" width="157" height="234" border="0"  /></div>    
+                                        
+                        <!-------------------------------------------- frame 62 Ways To Save -------------------------------------------->  
+                        <div id="f62-title" class="frameob"><img src="images/f62-title.png" alt="Purchase a new Energy Star®-qualified refrigerator and get a rebate up to $75" width="590" height="75" border="0"  /></div>                        
+		                <div id="f62-energystar" class="frameob"><img src="images/f62-energystar.gif" alt="ENERGY STAR LOGO" width="234" height="236" border="0"  /></div>            
+                         <audio id="f62Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f62.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f62.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <!-------------------------------------------- frame 63 Ways To Save -------------------------------------------->  
+                        <div id="f63-title" class="frameob"><img src="images/f63-title.png" alt="We'll pick up your old one and give you $50" width="443" height="80" border="0"  /></div>                        
+                        <div id="f63-truck" class="frameob"><img src="images/f63-truck.png" alt="Truck" width="520" height="254" border="0"  /></div>           
+                        <div id="f63-dollyfridge" class="frameob"><img src="images/f63-dollyfridge.png" alt="Old Fridge" width="160" height="184" border="0"  /></div>                                      
+                         <audio id="f63Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f63.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f63.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                         
+                        <!-------------------------------------------- frame 64 Ways To Save -------------------------------------------->  
+                        <div id="f64-title" class="frameob"><img src="images/f64-title.png" alt="Show me how to save on my" width="454" height="33" border="0"  /></div>                        
+                        <div id="f64-ac" class="frameob" tabindex="1"><a href="#">Air Conditioning > </a></div>           
+                        <div id="f64-pool" class="frameob" tabindex="2"><a href="#">Pools > </a></div>  
+                          <audio id="f64Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f64.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f64.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                        
+                        <!-------------------------------------------- frame 65/70 Resources -------------------------------------------->  
+                        <div id="f65-sun" class="frameob"><img src="images/f65-sun.png" alt="Sun" width="209" height="210" border="0"  /></div>                        
+                        <div id="f65-cloud" class="frameob"><img src="images/f65-cloud.png" alt="Cloud" width="950" height="135" border="0"  /></div>        
+                        <div id="f65-mountain" class="frameob"><img src="images/f65-mountain.png" alt="Grass" width="960" height="244" border="0"  /></div>  
+                        <div id="f65-tree" class="frameob"><img src="images/f65-tree.png" alt="bill" width="887" height="65" border="0"  /></div>                        
+                        <div id="f65-fruittree" class="frameob"><img src="images/f65-fruittree.png" alt="Tree" width="449" height="220" border="0"  /></div>           
+                        <div id="f65-house" class="frameob"><img src="images/f65-house.png" alt="Houses" width="651" height="110" border="0"  /></div>						
+<!--                         <div id="f64-title" class="frameob"><img src="images/f64-title.png" alt="Show me how to save on my" width="454" height="33" border="0"  /></div>                        
+                        <div id="f64-ac" class="frameob" tabindex="1"><a href="#">Air Conditioning > </a></div>           
+                        <div id="f64-poolspa" class="frameob" tabindex="2"><a href="#">Pools > </a></div> -->
+                          <audio id="f65Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f65.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f65.mp3" type="audio/mpeg">
+                          
+                        </audio><br> 
+                          <audio id="f66Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f66.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f66.mp3" type="audio/mpeg">
+                          
+                        </audio><br> 
+                          <audio id="f67Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f67.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f67.mp3" type="audio/mpeg">
+                          
+                        </audio><br> 
+                         <audio id="f68Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f68.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f68.mp3" type="audio/mpeg">
+                          
+                        </audio><br> 
+                        <audio id="f69Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f69.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f69.mp3" type="audio/mpeg">
+                          
+                        </audio><br> 
+                        <audio id="f70Audio" style="display: none; opacity: 0;" controls="controls" preload="auto">
+                          <source src="audio/SCE_f70.ogg" type="audio/ogg">
+                          <source src="audio/SCE_f70.mp3" type="audio/mpeg">
+                          
+                        </audio><br>                                                                         
+                        <div id="f65-myaccount" class="frameob"><a href="https://www.sce.com/wps/portal/home/residential/my-account/" target="_blank" tabindex="1" onclick="PausePlay()">My Account ></a></div>           
+                        <div id="f65-budget" class="frameob"><a href="https://www.sce.com/wps/portal/home/residential/my-account/budget-assistant-and-you/" target="_blank" tabindex="2" onclick="PausePlay()">Budget Assistant ></a></div>
+                        <div id="f65-savepower" class="frameob"><a href="https://www.sce.com/wps/portal/home/residential/rebates-savings/save-power-day/" target="_blank" tabindex="3" onclick="PausePlay()">Save Power Days ></a></div>						
+                        <div id="f65-rebates" class="frameob"><a href="https://www.sce.com/wps/portal/home/residential/rebates-savings/rebates/" target="_blank" tabindex="4" onclick="PausePlay()">Rebates ></a></div>                        
+                        <div id="f65-video" class="frameob"><a href="http://www.youtube.com/watch?v=5YVg_YolkpA" target="_blank" tabindex="5" onclick="PausePlay()">Bill Explainer Video ></a></div>           
+                        <div id="f65-baselinerate" class="frameob"><a href="https://www.sce.com/wps/portal/home/residential/rates/residential-plan" target="_blank" tabindex="6" onclick="PausePlay()">Baseline rate ></a></div>
+
+                 </div><!-- end frame1-->                                                                                                                        
+           <!--     </div>-->
+             
+                <div id="mainmenu">                	
+                        <div id="menu1" class="menuitem" tabindex="101"></div>
+                        <div id="menu2" class="menuitem" tabindex="102"></div>
+                        <div id="menu3" class="menuitem" tabindex="103"></div>
+                        <div id="menu4" class="menuitem" tabindex="104"></div>
+                </div>
+                
+              
+            </div><!--frame wrapper ends-->
+     		<div id="cc-wrapper"><!--cc wrapper starts-->
+            	<div id="cc-content"></div>
+            	<div id="cc-btn" tabindex="105"></div>
+            </div><!--cc wrapper ends-->   
+ 
+    
+    </div><!--main window ends here-->
+
+</body>
+</html>
